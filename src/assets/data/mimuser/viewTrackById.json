@@ -1,0 +1,78 @@
+{
+    "trackId": 469,
+    "trackName": "Track_Name_Test_su",
+    "lastUpdatedDate": "05/13/21 04:55 PM",
+    "trackNotes": "some notes here",
+    "trackStatus": "APPROVED",
+    "campaignName": "CampaignNameTest_su",
+    "campaignBudget": 420.67,
+    "overrideCannibalizationInd": 1,
+    "decisionFileId": 156,
+    "xmlTemplateId": 533,
+    "noOfScenarios": 3,
+    "campaignCannibalization": [
+        {
+            "cannibalizationRule": "Sales Growth vs. Balcon",
+            "cannibalizationValue": 20
+        },
+        {
+            "cannibalizationRule": "Flex Vs Sales Growth",
+            "cannibalizationValue": 40
+        }
+    ],
+    "campaignDataset": [
+        {
+            "datasetName": "samp_balcon_30_02_21_1",
+            "sampleSize": 30
+        },
+        {
+            "datasetName": "samp_balcon_30_02_21_2",
+            "sampleSize": 50
+        },
+        {
+            "datasetName": "prod_Flex_30_02_21_1",
+            "sampleSize": 30
+        },
+        {
+            "datasetName": "samp_balcon_30_02_21_1",
+            "sampleSize": 30
+        },
+        {
+            "datasetName": "samp_balcon_30_02_21_2",
+            "sampleSize": 50
+        },
+        {
+            "datasetName": "prod_Flex_30_02_21_1",
+            "sampleSize": 30
+        }
+    ],
+    "scenarioList": [
+        {
+            "scenarioId": 570,
+            "scenarioName": "scenario2_test_su_570",
+            "scenarioStatus": "COMPLETED",
+            "optimizerObjective": "Some Optimizer Objective notes here. check here.",
+            "lastUpdatedDate": "05/13/21 04:55 PM",
+            "approvalFlag": "Y",
+            "priorityOrder": 1
+        },
+        {
+            "scenarioId": 571,
+            "scenarioName": "scenario2_test_su_571",
+            "scenarioStatus": "COMPLETED",
+            "optimizerObjective": "Some Optimizer Objective notes here. check here.",
+            "lastUpdatedDate": "05/13/21 04:55 PM",
+            "approvalFlag": "Y",
+            "priorityOrder": 2
+        },
+        {
+            "scenarioId": 567,
+            "scenarioName": "Test_Scenario_su",
+            "scenarioStatus": "DRAFT",
+            "optimizerObjective": "Some Optimizer Objective notes here su",
+            "lastUpdatedDate": "05/13/21 04:54 PM",
+            "approvalFlag": "N",
+            "priorityOrder": 0
+        }
+    ]
+}

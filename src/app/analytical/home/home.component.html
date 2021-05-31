@@ -1,0 +1,164 @@
+<div class="row">
+  <div class="col">
+    <div class="row">
+      <div class="col" style="margin: auto;">
+        <span class="title">Welcome Back!</span>
+      </div>
+      <div class="col">
+        <button routerLink="track/create" type="button" class="btn primary">Create Track</button>
+      </div>
+    </div>
+    <div class="row section1">
+      <div class="col-12">
+        <div class="row">
+          <div class="col-6 section-title"> Team Tracks</div>
+          <div class="col-6 section-right"><a routerLink="tracks">View All</a></div>
+        </div>
+        <div class="row" style="margin-left: 5px;">
+          <div class="col-6 col-sm-3 track" [ngStyle]="{'border': i == (teamTracks.length - 1) ? 'unset' : ''}"
+            *ngFor="let track of teamTracks; let i = index">
+            <div class="row" style="margin: 0px">
+              <div class="col trackId p-0">
+                <span>ID: {{track.trackId}}</span><br>
+                <div class="row" style="margin-left: 0px">{{track.lastUpdatedDate}}</div>
+              </div>
+              <div class="col p-0 status" *ngIf="track.trackStatus == 'DRAFT'">
+                <div class="text">Draft</div>
+                <div class="draft"></div>
+              </div>
+              <div class="col p-0 status" *ngIf="track.trackStatus == 'IN PROGRESS'">
+                <div class="text">In Progress</div>
+                <div class="in-progress"></div>
+              </div>
+              <div class="col p-0 status" *ngIf="track.trackStatus == 'APPROVED'">
+                <div class="text">Approved</div>
+                <div class="approved"></div>
+              </div>
+            </div>
+            <div class="row m-0" style="margin-top: 5px !important;">
+              <div class="track-name-1">{{track.trackName}}</div>
+            </div>
+            <div class="row m-0" style="margin-top: 5px !important;">
+              <div class="scenarios"> {{track.noOfScenarios}} scenarios </div>
+            </div>
+            <div class="row m-0" style="margin-top: 10px !important;">
+              <div class="col p-0">
+                <img src="./assets/images/copy.svg" width="12px" style="margin-right: 4px;">
+                <a class="clone" routerLink="cloneTrack/{{track.trackId}}">Clone</a>
+              </div>
+              <div class="col p-0" style="text-align: end">
+                <img src="./assets/images/profile1.svg" width="24px" style="margin-right: 8px;">
+                <img src="./assets/images/profile2.svg" width="24px" style="margin-right: 8px;">
+                <span class="numberCircle">+2</span>
+                <br>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row section2">
+      <div class="col-12">
+        <div class="row">
+          <div class="col-6 section-title"> Completed Production Tracks</div>
+          <div class="col-6 section-right"><a routerLink="tracks">View All</a></div>
+        </div>
+        <div class="row m-0">
+          <div class="col-auto production-track p-0" *ngFor="let track of productionTracks">
+            <div class="top-margin"></div>
+            <div class="row m-0">
+              <span class="track-name"> {{track.trackName}}</span>
+            </div>
+            <div class="row m-0">
+              <span class="trackId"><span>ID: {{track.trackId}}</span><br>
+                {{track.lastUpdatedDate}}</span>
+            </div>
+            <div class="row m-0">
+              <span class="status"> Completed</span>
+            </div>
+            <div class="row m-0">
+              <span class="discription"> {{track.trackNotes}}</span>
+            </div>
+            <div class="row m-0">
+              <a routerLink="viewTrack/{{track.trackId}}" class="view">View</a>
+            </div>
+          </div>
+        </div>
+        <br>
+      </div>
+    </div>
+    <div class="row m-0">
+      <div class="col-12 col-sm-6 section3">
+        <div class="row">
+          <div class="col-12 title"> Available Campaigns</div>
+        </div>
+        <div class="row">
+          <div class="col-12">
+            <mat-tab-group style="margin-top: 5px">
+              <mat-tab label="Sample">
+                <table class="table table-striped">
+                  <tbody>
+                    <tr *ngFor="let dataset of campaignSampleDatasets">
+                      <td class="name">{{dataset.datasetName}}</td>
+                      <td class="date">
+                        <span class="text"> ID: {{dataset.datasetId}} | {{dataset.lastUpdatedDate}}</span>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </mat-tab>
+              <mat-tab label="Production">
+                <table class="table table-striped">
+                  <tbody>
+                    <tr *ngFor="let dataset of campaignProductionDatasets">
+                      <td class="name">{{dataset.datasetName}}</td>
+                      <td class="date">
+                        <span class="text"> ID: {{dataset.datasetId}} | {{dataset.lastUpdatedDate}}</span>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </mat-tab>
+              <mat-tab label="Cannibalization">
+                <table class="table table-striped">
+                  <tbody>
+                  </tbody>
+                </table>
+              </mat-tab>
+            </mat-tab-group>
+          </div>
+        </div>
+      </div>
+      <div class="col-12 col-sm-6 section4">
+        <div class="row">
+          <div class="col-12 title"> Recent Files</div>
+        </div>
+        <div class="row" style="margin-top: 18px;">
+          <div class="col-12">
+            <div class="table-container">
+              <table class="table table-striped">
+                <tbody>
+                  <tr *ngFor="let file of recentFiles">
+                    <td title="{{file.fileName}}">
+                      <div class="name">
+                        <img src="./assets/images/clip.svg" class="img">
+                        {{file.fileName}}
+                      </div>
+                    </td>
+                    <td class="date">
+                      <span class="text"> ID: {{file.fileId}} | {{file.lastUpdatedDate}}</span>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-auto right-widget">
+    <app-track-summary [data]="summaryData"></app-track-summary>
+  </div>
+</div>
+<br><br>

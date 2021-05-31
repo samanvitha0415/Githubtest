@@ -1,0 +1,62 @@
+<div class="row">
+  <div class="col-2 track-name">
+    <input type="text" [(ngModel)]="createTrackService.trackName" *ngIf="!createTrackService.trackId" />
+    <span *ngIf="!!createTrackService.trackId">{{createTrackService.trackName}}</span>
+  </div>
+  <div class="col track-name-edit">
+    <img src="assets/images/edit.svg" class="track-name-edit" alt="edit" *ngIf="!createTrackService.trackId">
+  </div>
+
+</div>
+<br>
+<div class="row" style="margin-top: 10px;">
+  <div class="scenario-name">
+    <input type="text" [(ngModel)]="createTrackService.scenarioName" *ngIf="!createTrackService.scenarioId" />
+    <span *ngIf="!!createTrackService.scenarioId">{{createTrackService.scenarioName}}</span>
+  </div>
+  <img src="assets/images/edit.svg" class="track-name-edit" alt="edit">
+  <div class="row m-2" style="color: red;">{{errorMessages.get("scenarioName")}} </div>
+</div>
+<br>
+<div class="row m-0">
+  <div class="col section1">
+    <div class="row m-0" style="margin: 30px 10px !important;">
+      <div class="title">Optimizer Objective</div>
+      <div class="track-name-err-msg">{{errorMessages.get("optimizerObjective")}}</div>
+    </div>
+    <div class="row m-0" style="margin: 0px 10px !important;">
+      <textarea class="text" [(ngModel)]="createTrackService.optimizerObjective"></textarea>
+    </div>
+    <br>
+  </div>
+</div>
+
+<div class="row m-0">
+  <div class="col section2">
+    <div class="row m-0" style="margin: 30px 10px !important;">
+      <div class="title">Decision Variables</div>
+    </div>
+    <div class="row m-0" style="margin: 0px 10px !important;">
+      <div class="col p-0" style="overflow: auto">
+        <table >
+          <tbody>
+            <tr class="headers">
+              <th *ngFor="let column of createTrackService.$decisionVariableColumnNames$|async">
+                {{column}}
+              </th>
+            </tr>
+            <tr *ngFor="let row of createTrackService.$decisionVariableKeys$|async">
+              <td *ngFor="let columnName of createTrackService.$decisionVariableColumnNames$|async">
+                <input type="text" [(ngModel)]="createTrackService.decisionVariable[row][columnName]">
+              </td>
+            </tr>
+          </tbody>
+        </table>
+        </div>
+    </div>
+  </div>
+</div>
+
+
+
+<app-progress [step]='5' (emitIsNextBtnClicked)="nextBtnClickedEvent()"></app-progress>

@@ -1,0 +1,152 @@
+<div class="row">
+    <div class="track-name">
+      <span>Track Name{{ allScenarios.trackName }}</span>
+    </div>
+    
+  </div>
+  <br>
+  <div class="row m-0">
+    <div class="col section1">
+      <div class="row m-0" style="margin-top: 35px !important;">
+     
+      <div class="left">
+        <!-- this.allScenarios = this.executeTrackService.trackData;
+    this.budget = this.executeTrackService.trackData.campaignBudget; -->
+
+
+       <div class="col">
+          <div class="row m-0 title">Sample Size</div>
+
+          <div  style="height: 200px; overflow-y: scroll; overflow-x: hidden;">
+          <div  *ngFor="let item of allScenarios?.campaignDataset">
+           
+          <div class="row title-inside">{{ item.datasetName }}</div>
+          <div class="sampleValues">
+            <span class="sampleValue" [ngClass]="{'selected': item.sampleSize == 20}">20%</span>
+            <span class="sampleValue" [ngClass]="{'selected': item.sampleSize == 30}">30%</span>
+            <span class="sampleValue" [ngClass]="{'selected': item.sampleSize == 40}">40%</span>
+            <span class="sampleValue" [ngClass]="{'selected': item.sampleSize == 50}">50%</span>
+          </div>
+          <div class="row m-0 slider">
+            <mat-slider max="4" min="1" step="1" value="item.sampleSize">
+            </mat-slider>
+            <div class="sliderPoint"><span class="circle"></span><span class="circle"></span><span
+                class="circle"></span><span class="circle"></span></div>
+          </div>
+        </div>
+      </div>
+
+        </div>
+        <div class="col">
+          <div class="row m-0 title">Campaign Budget</div>
+          <div class="row m-0 budget">
+            <div class="minus" (click)="minus()">
+              <mat-icon style="margin-top: 2px;">minimize</mat-icon>
+            </div>
+            <div class="textField">
+              <div class="dollar col-auto">$</div>
+              <div class="col p-0"><input type="number" [(ngModel)]="budget" /> </div>
+            </div>
+            <div class="plus" (click)="add()">
+              <div style="margin-top: 12px;">+</div>
+            </div>
+          </div>
+        </div>
+
+
+    </div>
+        <div class="row m-0" style="margin-top: 35px !important;">
+        <div class="col">
+          <div class="row m-0 title">
+            <div>Override Cannibalization</div>
+            <div style="margin-left: 122px; padding-top: 3px;">
+              <!-- <mat-checkbox class="check" [checked]="data" (change)="setAll($event.checked)"></mat-checkbox> -->
+            </div>
+          </div>
+         
+          
+          
+          <div class="row m-0 override" *ngFor="let items of allScenarios?.campaignCannibalization">
+            <div class="checkbox">
+              {{ items.cannibalizationRule }}
+              <!-- <mat-checkbox class="check" [(ngModel)]="data1" (ngModelChange)="updateAllComplete()">Balcon vs. Flex</mat-checkbox> -->
+            </div>
+            <div class="percent">
+              <div class="textField">
+                <div class="col p-0"><input [ngClass]="{'checked': data1}" type="number" [value]="items.cannibalizationValue" /> </div>
+                <div class="symbol col-auto">%</div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      </div>
+      
+      
+    </div>
+  </div>
+  
+  <div class="row m-0">
+    <div class="col section2">
+        <table class="table">
+            <tbody>
+              <tr class="headers">
+                <th>
+                  NAME
+                </th>
+                <th>
+                  TYPE
+                </th>
+                <th>
+                  LABEL
+                </th>
+                <th>
+                  MODEL ID
+                </th>
+                <th>
+                  LABEL
+                </th>
+                <th>
+                  LABEL
+                </th>
+              </tr>
+              <tr>
+                <td>Lorem Ipsum</td>
+                <td>Average</td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>Lorem Ipsum</td>
+                <td>None</td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>Lorem Ipsum</td>
+                <td>None</td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+              </tr>
+              <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+              </tr>
+            </tbody>
+          </table>
+ 
+    </div>
+  </div>
+  <app-progress-nav [step]='4'></app-progress-nav>

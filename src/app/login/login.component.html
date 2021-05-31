@@ -1,0 +1,71 @@
+<div class="container">
+  <div class="row header">
+    <div class="col" style="margin: auto;">
+      <span class="header-title">Cross Program Optimization</span>
+    </div>
+    <div class="col" style="margin: auto;">
+      <img src="../../assets/images/citi_logo_white.png" class="citi-logo" alt="">
+    </div>
+  </div>
+  <div class="row">
+    <div class="col">
+      <div class="card">
+        <div class="card-body">
+          <div class="row">
+            <div class="col-8">
+              <div col-12 class="card-title-div">
+                <h2 class="card-title">Sign On</h2>
+              </div>
+              <form class="form-login" [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+                <div class="col-8">
+                  <label>User ID</label>
+                  <input type="text" formControlName="userId" class="form-control" name="userId" placeholder="User ID">
+                </div>
+                <br>
+                <div class="col-8">
+                  <label>Password</label>
+                  <input type="password" formControlName="password" class="form-control" id="password"
+                    placeholder="*******">
+                </div>
+              </form>
+
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" value="">
+                <label class="form-check-label" for="flexCheckDefault">
+                  Remember my User ID
+                </label>
+              </div>
+
+              <div class="col">
+                <button type="button" style="margin-right: 10px" (click)="onSubmit()" class="btn btn-primary">Sign
+                  On</button>
+                <button type="button" class="btn btn-light">Cancel</button>
+              </div>
+              <br />
+              <div style="margin-bottom: 15px; display: flex;">
+                <div style="padding-left: 15px;"> 
+                  <a href="">Forgot Username?</a>
+                </div>
+                <div style="padding-left: 7rem;">
+                  <a href="">Forgot Password?</a>
+                </div>
+                <!-- <div class="col-6" style="margin-left: 1em;">
+                  <a href="">Forgot Username?</a>
+                </div>
+                <div class="col-6">
+                  <a href="">Forgot Password?</a>
+                </div> -->
+              </div>
+              <div class="col">
+                <a href=""> <u>Register for Online Access</u></a>
+              </div>
+            </div>
+            <div class="col-4">
+              <img style="float: right; margin-top: 3rem;" src="./assets/images/cpoLogin.svg">
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

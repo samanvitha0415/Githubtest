@@ -1,0 +1,37 @@
+<div *ngIf="!!data">
+  <div class="row">
+    <div class="title">Track Summary</div>
+  </div>
+  <div class="row m-0">
+    <div class="col-6 p-0">
+      <div style="width: 100%;display: block;">
+        <canvas baseChart [data]="doughnutChartData" [labels]="doughnutChartLabels" [chartType]="doughnutChartType"
+          [plugins]="doughnutChartPlugins" (chartHover)="chartHovered($event)" (chartClick)="chartClicked($event)"
+          [options]="doughnutChartOptions" [colors]="colors"></canvas>
+      </div>
+    </div>
+    <div class="col">
+      <div class="row legend" style="margin-top: 10px">
+        <div class="legend-blue"></div>
+        <div class="text">Draft</div>
+        <div class="number">{{draftCount}}</div>
+      </div>
+      <!-- <div class="row legend">
+        <div class="legend-orange"></div>
+        <div class="text">In Progress</div>
+        <div class="number">{{inProgressCount}}</div>
+      </div> -->
+      <div class="row legend">
+        <div class="legend-green"></div>
+        <div class="text">Approved</div>
+        <div class="number">{{approvedCount}}</div>
+      </div>
+    </div>
+  </div>
+  <br>
+  <mat-divider></mat-divider>
+  <br>
+  <div class="render-div">
+    <app-recent-tracks [recentTracks]="recentTracks"></app-recent-tracks>
+  </div>
+</div>

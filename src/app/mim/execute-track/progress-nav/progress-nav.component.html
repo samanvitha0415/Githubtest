@@ -1,0 +1,64 @@
+<div class=" progress-navigation" [ngClass]="{'no-progress': step === 1}" >
+    <div class="steps" *ngIf="step !== 1" >
+ 
+      <div class="active">
+        <span *ngIf="step < 3"  class="circle active">1</span>
+        <span *ngIf="step > 2" class="circle active">
+          <mat-icon >done</mat-icon>
+        </span>     
+        Notes
+      </div>
+
+      <div>
+        <span *ngIf="step < 4"  class="circle active">2</span>
+        <span *ngIf="step > 3" class="circle active">
+          <mat-icon >done</mat-icon>
+        </span>     
+        Details
+      </div>
+
+      <div>
+        <span *ngIf="step < 5"  class="circle active">3</span>
+        <span *ngIf="step > 4" class="circle active">
+          <mat-icon >done</mat-icon>
+        </span>     
+        Summary
+      </div>
+
+    </div>
+    
+      <div class="progress-buttons">
+
+          <div *ngIf="step === 1">
+            <button class="btn primary  cancel " (click)="previous()" >Cancel</button>
+          </div>
+          <div *ngIf="step > 1 && step !== 5">
+            <button class="btn primary  cancel " (click)="previous()" >Back</button>
+          </div>
+          <div *ngIf="step > 4">
+            <button class="btn primary  cancel " (click)="previous()" >Previous</button>
+          </div>
+
+
+
+
+          <div *ngIf="step !== 5">
+            <button class="btn primary " (click)="next()" >Next</button>
+          </div>
+          <div *ngIf="step === 5">
+
+
+            
+      <!-- {{ allScenarios | json }}<br>
+      {{ trackID }}<br>
+      {{ newBudget }}<br> -->
+
+      
+            <button class="btn primary " (click)="next(allScenarios[0],trackID,newBudget)" >Execute</button>
+          </div>
+
+      </div>
+    
+    </div>
+    
+    

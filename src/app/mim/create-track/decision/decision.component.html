@@ -1,0 +1,87 @@
+<div class="row">
+  <div class="track-name">
+    <input type="text" [(ngModel)]="createTrackService.trackName" readonly />
+  </div>
+  <!-- <img src="assets/images/edit.svg" (click)="editTrack = true" class="track-name-edit" alt="edit"> -->
+</div>
+<br>
+<div class="row m-0">
+  <div class="col section1">
+    <div class="row m-0" style="margin-top: 30px !important;">
+      <div class="col">
+        <div class="row m-0">
+          <div class="title">Upload Decision File </div>
+          <div class="upload">
+            <input [value]="excelFileName" (click)="uploader.click()" type="text" id="file1">
+            <input hidden type="file"
+              accept=".csv, application/vnd.openxmlformats-officedocument.spreadsheetml.sheet, application/vnd.ms-excel"
+              #uploader (change)="uploadExcel($event)" />
+          </div>
+          <div class="button" (click)="editExcel()">
+            <div style="margin-top: 10px;">+ Upload</div>
+          </div>
+        </div>
+        <div class="row m-0" style="color: red;">
+          {{errorMessages.get("excelFile")}}
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="row m-0" *ngIf="!!bodyContents">
+  <div class="col section2">
+    <div class="row m-0" style="margin-top: 30px !important;">
+      <div class="col">
+        <div class="row m-0">
+          <div class=" col p-0 title">
+            <div>
+              <mat-icon style="transform: rotate(90deg)">attachment</mat-icon>
+            </div>
+            <div> {{excelFileName}}</div>
+          </div>
+          <!-- <div class="col p-0">
+            <div class="button">
+              <div style="margin-top: 7px;">
+                <mat-icon style="font-size: 12px;">edit</mat-icon> Edit
+              </div>
+            </div>
+          </div> -->
+        </div>
+        <div class="row m-0 excel">
+          <!-- <div class="col-12 p-0" style="overflow: auto; height: 550px;"
+            [innerHtml]="sanitizer.bypassSecurityTrustHtml(bodyContents)">
+          </div> -->
+          <table class="table">
+            <tbody>
+              <tr>
+                <th>1</th>
+                <th>A</th>
+                <th>B</th>
+                <th>C</th>
+                <th>D</th>
+                <th>E</th>
+                <th>F</th>
+              </tr>
+              <tr *ngFor="let number of numbers">
+                <td>{{number + 2}}</td>
+                <td>CP2M</td>
+                <td>CP2M</td>
+                <td>CP2M</td>
+                <td>CP2M</td>
+                <td>CP2M</td>
+                <td>CP2M</td>
+              </tr>
+              
+            </tbody>
+          </table>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="row m-0" style="height: 500px;" *ngIf="!bodyContents">
+</div>
+<app-progress [step]='3' (emitIsNextBtnClicked)="nextBtnClickedEvent()"></app-progress>

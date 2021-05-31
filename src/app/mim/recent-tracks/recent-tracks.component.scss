@@ -1,0 +1,96 @@
+.main-label{
+    font-family: Interstate-Regular;
+    font-size: 18px;
+    color: #333333;
+    text-align: left;
+    padding-left: 9px;
+    width: 184px;
+    height: 26px;
+}
+.mainView{
+    font-family: Interstate-Bold;
+    font-size: 14px;
+    color: #056DAE;
+    text-align: left;
+}
+.view-all{
+    font-family: Interstate-Bold;
+    font-size: 14px;
+    color: #056DAE;
+    text-align: left;
+    padding-left: 27px;
+}
+.details-header{
+    font-family: Interstate-Regular;
+    font-size: 22px;
+    color: #333333;
+    text-align: left;
+}
+.detail-descr{
+    font-family: Interstate-Regular;
+    font-size: 10px;
+    color: #909090;
+}
+.scenarios{
+    font-family: Interstate-Regular;
+    font-size: 16px;
+    color: #333333;
+    text-align: left;
+}
+.scenarios span{
+    font-family: Interstate-Regular;
+    font-size: 16px;
+    color: #333333;
+    text-align: left;
+    padding-right:4px;
+}
+
+.in-progress {
+    color: #F29E3A;
+    font-size: 10px;
+    margin-right: 3px;
+}
+
+.draft {
+    color: #3A4E8A;
+    font-size: 10px;
+    margin-right: 3px;
+}
+
+.approved {
+    color: #75B78C;
+    font-size: 10px;
+    margin-right: 3px;
+}
+.status-label{
+    font-family: Interstate-Regular;
+    font-size: 12px;
+    color: #131415;
+}
+.fa-ellipsis-v{
+    position: relative;
+    left: -15px;
+    font-size: 14px;
+}
+hr{
+    width: 88%;
+    background-color: #bcbbbb30;
+}
+
+.dot-button{
+    width: 18px;
+    height: 18px;
+}  
+.mat-menu-item{
+cursor: pointer;
+-webkit-tap-highlight-color: transparent;
+    display: block;
+    line-height: 48px;
+    height: 33px;
+    text-align: left;
+    text-decoration: none;
+    font-size: 14px;
+    color: #333333;
+    max-width: 100%;
+    position: relative;
+}

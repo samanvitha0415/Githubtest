@@ -1,0 +1,47 @@
+<div class=" progress-navigation">
+    <div [ngClass]="{'active': step < 3}" style="display: flex;">
+      <div *ngIf="step < 3" class="circle">1</div>
+      <div *ngIf="step > 2" class="done">
+        <mat-icon style="padding-top: 3px;">done</mat-icon>
+      </div>
+      <div>Details</div>
+    </div>
+    <div [ngClass]="{'active': step == 3}" style="display: flex;">
+      <div *ngIf="step < 4" class="circle">2</div>
+      <div *ngIf="step > 3" class="done">
+        <mat-icon style="padding-top: 3px;">done</mat-icon>
+      </div>
+      <div>Decision File</div>
+    </div>
+    <div [ngClass]="{'active': step == 4}" style="display: flex;">
+      <div *ngIf="step < 5" class="circle">3</div>
+      <div *ngIf="step > 4" class="done">
+        <mat-icon style="padding-top: 3px;">done</mat-icon>
+      </div>
+      <div>XML File</div>
+    </div>
+    <div [ngClass]="{'active': step == 5}" style="display: flex;">
+      <div *ngIf="step < 6" class="circle">4</div>
+      <div *ngIf="step > 5" class="done">
+        <mat-icon style="padding-top: 3px;">done</mat-icon>
+      </div>
+      <div>Scenario</div>
+    </div>
+    <div [ngClass]="{'active': step == 6}" style="display: flex;">
+      <div *ngIf="step < 7" class="circle">5</div>
+      <div *ngIf="step > 6" class="done">
+        <mat-icon style="padding-top: 3px;">done</mat-icon>
+      </div>
+      <div>Review</div>
+    </div>
+    <div class="progress-buttons" *ngIf="step != 6">
+      <div *ngIf="step == 1"><button class="btn primary cancel " (click)="cancel()">Cancel</button></div>
+      <div *ngIf="step != 1"><button class="btn primary cancel " (click)="previous()">Previous</button></div>
+      <div><button class="btn primary " (click)="next()">Next</button></div>
+    </div>
+    <div class="progress-buttons" *ngIf="step == 6">
+      <div><button class="btn primary cancel" (click)="save()">Save</button></div>
+      <div><button class="btn primary " (click)="discard()">Discard</button></div>
+    </div>
+  </div>
+  

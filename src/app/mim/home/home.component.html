@@ -1,0 +1,217 @@
+<div class="row">
+  <div class="col">
+    <div class="row">
+      <div class="col" style="margin: auto;">
+        <span class="title">Welcome back!</span>
+      </div>
+      <div class="col">
+        <button routerLink="track/create" type="button" class="btn primary">Create Track</button>
+      </div>
+    </div>
+    <div class="row section1">
+      <div class="col-12">
+        <div class="row">
+          <div class="col-6 section-title">Production Tracks</div>
+          <!-- <div class="col-6 section-right"><a routerLink="/mim/track">View All</a></div> -->
+        </div>
+        <div class="row m-0">
+          <div class="col-auto production-track p-0" *ngFor="let prodTracks of mimData?.productionTracks">
+            <div
+              [ngClass]="{'top-margin': prodTracks.trackStatus === 'COMPLETED', 'top-margin2': prodTracks.trackStatus === 'FINALIZED'}">
+            </div>
+            <div class="row m-0">
+              <span class="track-name"> {{ prodTracks.trackName}}</span>
+            </div>
+            <div class="row m-0">
+              <span class="trackId"><span>ID: {{ prodTracks.trackId }}</span><br>
+                {{ prodTracks.lastUpdatedDate }}</span>
+            </div>
+            <div class="row m-0">
+              <span class="status"> {{ prodTracks.trackStatus }}</span>
+            </div>
+            <div class="row m-0">
+              <span class="discription"> {{ prodTracks.trackNotes }}</span>
+            </div>
+            <div class="row m-0">
+              <a routerLink="/mim/viewTrack/{{prodTracks.trackId}}" class="view">View</a>
+            </div>
+          </div>
+        </div>
+        <br>
+      </div>
+    </div>
+
+    <div class="row section2">
+      <div class="col-12">
+        <div class="row">
+          <div class="col-6 section-title"> Pending Production Tracks</div>
+          <div class="col-6 section-right"><a routerLink="/mim/track">View All</a></div>
+        </div>
+        <div>
+          <div class="row">
+            <div class="col-6 col-sm-3 track" *ngFor="let pendTracks of mimData?.pendingProductionTracks.slice(0,4); ">
+              <div class="row" style="margin: 0px">
+                <div class="col trackId p-0">
+                  <span>ID: {{ pendTracks.trackId }}</span><br>
+                  {{ pendTracks.lastUpdatedDate }}
+                </div>
+                <div class="col p-0 status">
+                  <div class="text">{{ pendTracks.trackStatus }}</div>
+                  <div class="approved"></div>
+                </div>
+              </div>
+              <div class="row m-0" style="margin-top: 5px !important;">
+                <div class="track-name">
+                  {{ pendTracks.trackName }}
+                </div>
+              </div>
+              <div class="row m-0" style="margin-top: 5px !important;">
+                <div class="scenarios">
+                  {{ pendTracks.noOfScenarios }} scenarios
+                </div>
+              </div>
+              <div class="row m-0" style="margin-top: 10px !important;">
+                <div class="col p-0" (click)="executeTracks($event)">
+                  <img src="./assets/images/settings.png" width="12px" style="margin-right: 4px;">
+                  <a class="clone">Execute</a>
+                </div>
+                <div class="col p-0" style="text-align: end">
+                  <img src="./assets/images/profile1.svg" width="24px" style="margin-right: 8px;">
+                  <img src="./assets/images/profile2.svg" width="24px" style="margin-right: 8px;">
+                  <span class="numberCircle">+2</span>
+                  <br>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+    <div class="row m-0">
+      <div class="col-12 col-sm-6 section3">
+        <div class="row">
+          <div class="col-12 title"> Available</div>
+        </div>
+        <div class="row">
+          <div class="col-12">
+            <mat-tab-group style="margin-top: 5px">
+              <ng-container *ngFor="let availableTracks of mimData?.campaignList">
+                <ng-container *ngIf="availableTracks.datasetType == 'SAMPLE'">
+                  <mat-tab label="Sample">
+                    <table class="table table-striped">
+                      <tbody>
+                        <tr *ngFor="let availableTracksDs of availableTracks.datasetList ">
+                          <td class="name">{{ availableTracksDs.datasetName}}</td>
+                          <td class="date">
+                            <span class="text"> ID: {{ availableTracksDs.datasetId}} |
+                              {{ availableTracksDs.lastUpdatedDate}}</span>
+                          </td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </mat-tab>
+                </ng-container>
+
+                <ng-container *ngIf="availableTracks.datasetType == 'PRODUCTION'">
+                  <mat-tab label="Production">
+                    <table class="table table-striped">
+                      <tbody>
+                        <tr *ngFor="let availableTracksDs of availableTracks.datasetList ">
+                          <td class="name">{{ availableTracksDs.datasetName}}</td>
+                          <td class="date">
+                            <span class="text"> ID: {{ availableTracksDs.datasetId}} |
+                              {{ availableTracksDs.lastUpdatedDate}}</span>
+                          </td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </mat-tab>
+                </ng-container>
+              </ng-container>
+
+              <mat-tab label="Cannibalization">
+                <table class="table table-striped">
+                  <tbody>
+                    <tr>
+                      <td class="name">Dataset Name</td>
+                      <td class="date">
+                        <span class="text"> ID: 12345657 | 02/03/21 12:00pm</span>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td class="name">Dataset Name</td>
+                      <td class="date">
+                        <span class="text"> ID: 12345657 | 02/03/21 12:00pm</span>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td class="name">Dataset Name</td>
+                      <td class="date">
+                        <span class="text"> ID: 12345657 | 02/03/21 12:00pm</span>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td class="name">Dataset Name</td>
+                      <td class="date">
+                        <span class="text"> ID: 12345657 | 02/03/21 12:00pm</span>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td class="name">Dataset Name</td>
+                      <td class="date">
+                        <span class="text"> ID: 12345657 | 02/03/21 12:00pm</span>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td class="name">Dataset Name</td>
+                      <td class="date">
+                        <span class="text"> ID: 12345657 | 02/03/21 12:00pm</span>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td class="name">Dataset Name</td>
+                      <td class="date">
+                        <span class="text"> ID: 12345657 | 02/03/21 12:00pm</span>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td class="name">Dataset Name</td>
+                      <td class="date">
+                        <span class="text"> ID: 12345657 | 02/03/21 12:00pm</span>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </mat-tab>
+            </mat-tab-group>
+          </div>
+        </div>
+      </div>
+      <div class="col-12 col-sm-6 section4">
+        <div class="row">
+          <div class="col-12 title"> Recent Files</div>
+        </div>
+        <div class="row" style="margin-top: 18px;">
+          <div class="col-12">
+            <div class="table-container">
+              <table class="table table-striped">
+                <tbody>
+                  <tr *ngFor="let recentFiles of mimData?.recentFiles">
+                    <td class="name"><img src="./assets/images/clip.svg" class="img"> {{ recentFiles.fileName }}</td>
+                    <td class="date">
+                      <span class="text"> ID: {{ recentFiles.fileId }} | {{ recentFiles.lastUpdatedDate }}</span>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-3 right-widget">
+    <app-track-summary [data]="summaryData"></app-track-summary>
+  </div>
+  <br><br>

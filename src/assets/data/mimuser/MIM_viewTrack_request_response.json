@@ -1,0 +1,81 @@
+{
+	"trackId": 396,
+	"trackName": "Track Name Test2",
+	"lastUpdatedDate": "05/04/21 05:01 PM",
+	"trackNotes": null,
+	"trackStatus": "DRAFT",
+	"campaignName": "CampaignNameTest2",
+	"campaignBudget": 120.67,
+	"overrideCannibalizationInd": 1,
+	"decisionFileId": 51,
+	"xmlTemplateId": 434,
+	"noofScenarios": 1,
+	"campaignCannibalization": [
+		{
+			"cannibalizationRule": "Sales Growth vs. Balcon",
+			"cannibalizationValue": 20
+		},
+		{
+			"cannibalizationRule": "Flex Vs Sales Growth",
+			"cannibalizationValue": 40
+		}
+	],
+	"campaignDataset": [
+		{
+			"datasetName": "samp_balcon_30_02_21_1",
+			"sampleSize": 30
+		},
+		{
+			"datasetName": "samp_balcon_30_02_21_2",
+			"sampleSize": 50
+		},
+		{
+			"datasetName": "prod_Flex_30_02_21_1",
+			"sampleSize": 30
+		}
+	],
+	"scenariolist": [
+		{
+			"scenarioId": 437,
+			"scenarioName": "Test_Scenario_2",
+			"scenarioStatus": "DRAFT",
+			"optimizerObjective": "Some Optimizer 0bjective notes here",
+			"lastUpdatedDate": "05/04/21 05:01 PM"
+		},
+		{
+			"scenarioId": 438,
+			"scenarioName": "Test_Scenario_3",
+			"scenarioStatus": "IN PROGRESS",
+			"optimizerObjective": "Some Optimizer 0bjective notes here test",
+			"lastUpdatedDate": "08/03/21 21:21 PM"
+		},
+		{
+			"scenarioId": 439,
+			"scenarioName": "Test_Scenario_4",
+			"scenarioStatus": "DRAFT",
+			"optimizerObjective": "Some Optimizer 0bjective notes here test1",
+			"lastUpdatedDate": "18/02/21 03:16 AM"
+		},
+		{
+			"scenarioId": 440,
+			"scenarioName": "Test_Scenario_5",
+			"scenarioStatus": "APPROVED",
+			"optimizerObjective": "Some Optimizer 0bjective notes here test3",
+			"lastUpdatedDate": "05/04/21 02:01 PM"
+		},
+		{
+			"scenarioId": 441,
+			"scenarioName": "Test_Scenario_6",
+			"scenarioStatus": "DRAFT",
+			"optimizerObjective": "Some Optimizer 0bjective notes here test456",
+			"lastUpdatedDate": "23/04/21 05:01 PM"
+		},
+		{
+			"scenarioId": 442,
+			"scenarioName": "Test_Scenario_7",
+			"scenarioStatus": "IN PROGRESS",
+			"optimizerObjective": "Some Optimizer 0bjective notes here test322",
+			"lastUpdatedDate": "04/05/21 14:01 PM"
+		}
+	]
+}

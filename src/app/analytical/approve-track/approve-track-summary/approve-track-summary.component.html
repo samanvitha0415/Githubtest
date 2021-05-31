@@ -1,0 +1,175 @@
+<div class="row">
+  <div [ngClass]="isDialogOpen ? 'col-9' : 'col-12'">
+    <div class="row">
+      <div class="col p-0" style="margin: auto;">
+        <span class="title">Approve Track</span>
+      </div>
+      <div class="col">
+        <button type="button" class="btn secondary" routerLink="../tracks" style="float: right;">Discard</button>
+      </div>
+    </div>
+    <div class="row section1">
+      <div class="col-12 inside-section">
+        <div class="row header" style="margin: 0 auto;">
+          <div class="col-8 details-header">{{track?.trackName}}</div>
+          <div class="col-4">
+            <div class="track-desc">
+              <div class="detail-descr">ID: {{track?.trackId}} | {{track?.lastUpdatedDate}}</div>
+            </div>
+          </div>
+        </div>
+        <mat-divider></mat-divider>
+        <div class="row m-0" style="margin-top: 20px !important;margin-bottom: 10px !important;">
+          <div class="col-6" style="margin: auto;">
+            <span class="select-title">Selected Scenarios</span>
+          </div>
+          <div class="col-6">
+            <div class="row m-0">
+              <div class="col-6" style="padding-left: 0px;">
+                <div class="search">
+                  <mat-icon class="icon">search</mat-icon>
+                  <input type="text" placeholder="Search">
+                </div>
+              </div>
+              <div class="col-6 p-0 filter">
+                <div class="row m-0">
+                  <div class="text">Filter By:
+                  </div>
+                  <mat-form-field class="field">
+                    <mat-select value="All" [disableOptionCentering]="false" class="select">
+                      <mat-option value="All">All</mat-option>
+                      <mat-option value="Draft">Draft</mat-option>
+                      <mat-option value="In Progress">In Progress</mat-option>
+                      <mat-option value="Approved">Approved</mat-option>
+                    </mat-select>
+                  </mat-form-field>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div>
+          <table mat-table [dataSource]="dataSource">
+
+            <ng-container matColumnDef="scenarioDetails">
+              <th mat-header-cell *matHeaderCellDef> Scenario Details </th>
+              <td mat-cell *matCellDef="let element" class="main-data" style="width: 30%;"> {{element.scenarioName}}
+              </td>
+            </ng-container>
+
+            <ng-container matColumnDef="status">
+              <th mat-header-cell *matHeaderCellDef> Status </th>
+              <td mat-cell *matCellDef="let element">
+                <div class="scenarios" *ngIf="element.scenarioStatus == 'DRAFT'">
+                  <i aria-hidden="true" class="fa fa-circle i-draft"></i>
+                  <span class="status-label">{{element.scenarioStatus}}</span>
+                </div>
+                <div class="scenarios" *ngIf="element.scenarioStatus == 'INPROGRESS'|| element.scenarioStatus == 'SCHEDULED'">
+                  <i aria-hidden="true" class="fa fa-circle i-inProgress"></i>
+                  <span class="status-label">{{element.scenarioStatus}}</span>
+                </div>
+                <div class="scenarios" *ngIf="element.scenarioStatus == 'COMPLETED'">
+                  <i aria-hidden="true" class="fa fa-circle i-approved"></i>
+                  <span class="status-label">{{element.scenarioStatus}}</span>
+                </div>
+                <div class="scenarios" *ngIf="element.scenarioStatus == 'INVALIDATED'">
+                  <i aria-hidden="true" class="fa fa-circle i-invalidated"></i>
+                  <span class="status-label">{{element.scenarioStatus}}</span>
+                </div>
+              </td>
+            </ng-container>
+
+            <ng-container matColumnDef="search">
+              <th mat-header-cell *matHeaderCellDef>
+              </th>
+              <td mat-cell *matCellDef="let element" style="width: 15%;">
+                <a class="view-scenario" href="javascript:void(0)" (click)="openViewTrackDailog(element)">View
+                  Scenario</a>
+              </td>
+            </ng-container>
+
+            <ng-container matColumnDef="filter">
+              <th mat-header-cell *matHeaderCellDef>
+                Priority
+              </th>
+              <td class="priority" mat-cell *matCellDef="let element; let i = index"
+                style="width: 50px;text-align: center;">
+                <input type="number" [(ngModel)]="element.priority" />
+              </td>
+            </ng-container>
+
+            <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+            <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+          </table>
+        </div>
+        <div class="row m-0" style="margin-top: 20px !important;margin-bottom: 10px !important;">
+          <div class="col">
+            <span class="select-title">Preview Notes</span>
+          </div>
+        </div>
+        <div class="row notes m-0">
+          <textarea [(ngModel)]="approveTrackService.trackNotes" class="text" placeholder="Enter Your Notes Here"></textarea>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div [ngClass]="isDialogOpen ? 'col-3' : 'd-none'">
+    <div class="right-widget">
+      <div class="row" style="float: right; margin-right: 1px;">
+        <button mat-icon-button aria-label="close dialog">
+          <img style="width: 16px; height: 16px;" src="./assets/images/close.png" (click)="closeSummary()">
+        </button>
+      </div>
+      <div class="row">
+        <div class="col-12 scenarioTitle">Scenario Summary</div>
+        <p class="summaryText">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis non molestie
+          mauris. Vestibulum a maximus ex. Aliquam cursus lacus tempus, bibendum lectus a, pharetra magna.
+          Quisque aliquam nec nisi ac commodo. Donec in pulvinar lacus. Praesent nec ex est. Phasellus vitae
+          ipsum nunc. Ut in mauris sit amet nisl ullamcorper commodo in vitae massa. Suspendisse potenti.
+          Vestibulum porttitor augue eget nulla interdum, ut posuere metus commodo.</p>
+      </div>
+      <div>
+        <label class="row scenarioDetails">Details</label>
+        <div class="row summaryDetail">
+          <div class="col">
+            <label>Campaign Id</label>
+            <p>A CMP-1 FLEX Loan</p>
+          </div>
+        </div>
+        <div class="row summaryDetail">
+          <div class="col">
+            <label>Scenario Name</label>
+            <p>LOREM IPSUM</p>
+          </div>
+        </div>
+        <div class="row summaryDetail">
+          <div class="col">
+            <label>Sample Size</label>
+            <p>15%</p>
+          </div>
+        </div>
+        <div class="row summaryDetail">
+          <div class="col">
+            <label>Override Cannibalization</label>
+            <p>FLEX vs Balcon</p>
+          </div>
+        </div>
+        <div class="row summaryDetail">
+          <div class="col">
+            <label>Campaign Budget</label>
+            <p>5M</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="row footer">
+  <div class="col-6 left">
+    <button type="button" class="btn secondary" routerLink="../../approveTrackNotes/{{track?.trackId}}">Back</button>
+  </div>
+  <div class="col-6 right">
+    <button type="button" class="btn primary" (click)="approve()">Approve</button>
+  </div>
+</div>

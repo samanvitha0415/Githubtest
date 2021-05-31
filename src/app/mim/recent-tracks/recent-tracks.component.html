@@ -1,0 +1,57 @@
+<div class="row">
+  <div class="col-8">
+    <label class="main-label">My Recent Tracks</label>
+  </div>
+  <div class="col-4 text-center">
+    <a class="mainView" routerLink="/mim/track">View All</a>
+
+  </div>
+</div>
+
+<div class="row" *ngIf="recentTracks?.length > 0; else noTracks">
+  <div *ngFor="let recentTrack of recentTracks" class="col-12" style="padding-bottom: 2rem;">
+    <div class="row" style="margin: 0 auto;">
+      <div class="col-10 details-header">{{recentTrack.trackName | titlecase }}</div>
+      <div class="col-2">
+        <button class="dot-button" mat-icon-button [matMenuTriggerFor]="menu" aria-label="Menu">
+          <img src="./assets/images/more-vertical.svg" width="18px" height="18px">
+        </button>
+      </div>
+      <div class="col-1 text-center menu-box">
+        <mat-menu #menu="matMenu">
+          <button mat-menu-item (click)="cloneTracks(card.trackId)">
+            <span>Clone</span>
+          </button>
+          <!-- <button mat-menu-item disabled>
+            <span>Edit</span>
+          </button>
+          <button mat-menu-item>
+            <span>Item 3</span>
+          </button>
+          <button mat-menu-item>
+            <span>Item 4</span>
+          </button> -->
+        </mat-menu>
+      </div>
+    </div>
+    <div class="col-12 detail-descr">ID: {{recentTrack.trackId}} | {{recentTrack.lastUpdatedDate | date: 'dd/MM/yyyy
+      hh:mm a'}}</div>
+    <div class="col-12 scenarios"><span>{{recentTrack.noOfScenarios}}</span>Scenarios</div>
+    <div class="row" style="margin: 0 auto;">
+      <div class="col-8">
+        <i class="fa fa-circle" [ngClass]="{'in-progress': recentTrack.trackStatus === 'IN PROGRESS', 'draft': recentTrack.trackStatus === 'DRAFT', 
+                      'approved': recentTrack.trackStatus === 'APPROVED' || recentTrack.trackStatus === 'FINALIZED'
+                          || recentTrack.trackStatus === 'COMPLETED'}"></i>
+                <span class="status-label">{{recentTrack.trackStatus}}</span>
+      </div>
+      <div class="col-4 text-center">
+        <a class="view-all" routerLink="/mim/viewtrack">View</a>
+      </div>
+    </div>
+  <hr>
+  </div>
+</div>
+
+<ng-template #noTracks>
+  <div>No Tracks Available</div>
+</ng-template>

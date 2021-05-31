@@ -1,0 +1,445 @@
+{
+    "pendingProductionTracks": [
+        {
+            "trackId": 383,
+            "trackName": "TRACK_NAME6",
+            "lastUpdatedDate": "05/03/21 09:58 AM",
+            "noOfScenarios": 2,
+            "trackStatus": "APPROVED",
+            "scenarioStatusSummery": [
+                {
+                    "noOfScenarios": 1,
+                    "status": "COMPLETED"
+                },
+                {
+                    "noOfScenarios": 1,
+                    "status": "DRAFT"
+                }
+            ]
+        },
+        {
+            "trackId": 6,
+            "trackName": "TRACK_NAME6",
+            "lastUpdatedDate": "04/15/21 04:36 PM",
+            "noOfScenarios": 12,
+            "trackStatus": "APPROVED",
+            "scenarioStatusSummery": [
+                {
+                    "noOfScenarios": 4,
+                    "status": "COMPLETED"
+                },
+                {
+                    "noOfScenarios": 2,
+                    "status": "DRAFT"
+                },
+                {
+                    "noOfScenarios": 6,
+                    "status": "INPROGRESS"
+                }
+            ]
+        },
+        {
+            "trackId": 7,
+            "trackName": "TRACK_NAME7",
+            "lastUpdatedDate": "04/15/21 04:36 PM",
+            "noOfScenarios": 1,
+            "trackStatus": "APPROVED",
+            "scenarioStatusSummery": [
+                {
+                    "noOfScenarios": 1,
+                    "status": "COMPLETED"
+                }
+            ]
+        },
+        {
+            "trackId": 1,
+            "trackName": "TRACK_NAME1",
+            "lastUpdatedDate": "04/12/21 01:33 PM",
+            "noOfScenarios": 1,
+            "trackStatus": "APPROVED",
+            "scenarioStatusSummery": [
+                {
+                    "noOfScenarios": 1,
+                    "status": "COMPLETED"
+                }
+            ]
+        },
+        {
+            "trackId": 363,
+            "trackName": "Track_Name_Test2",
+            "lastUpdatedDate": "04/26/21 04:47 PM",
+            "noOfScenarios": 3,
+            "trackStatus": "APPROVED",
+            "scenarioStatusSummery": [
+                {
+                    "noOfScenarios": 2,
+                    "status": "COMPLETED"
+                },
+                {
+                    "noOfScenarios": 1,
+                    "status": "DRAFT"
+                }
+            ]
+        }
+    ],
+    "productionTracks": [
+        {
+            "trackId": 5,
+            "trackName": "TRACK_NAME5",
+            "lastUpdatedDate": "04/14/21 09:35 AM",
+            "noOfScenarios": 1,
+            "trackStatus": "FINALIZED",
+            "scenarioStatusSummery": [
+                {
+                    "noOfScenarios": 1,
+                    "status": "COMPLETED"
+                }
+            ]
+        },
+        {
+            "trackId": 2,
+            "trackName": "TRACK_NAME2",
+            "lastUpdatedDate": "04/12/21 01:33 PM",
+            "noOfScenarios": 2,
+            "trackStatus": "COMPLETED",
+            "scenarioStatusSummery": [
+                {
+                    "noOfScenarios": 2,
+                    "status": "COMPLETED"
+                }
+            ]
+        }
+    ],
+    "usertracks": {
+        "statusSummary": [
+            {
+                "noOfTracks": 19,
+                "status": "DRAFT"
+            }
+        ],
+        "recentTracks": [
+            {
+                "trackId": 420,
+                "trackName": "Track Name",
+                "lastUpdatedDate": "05/06/21 10:20 PM",
+                "noOfScenarios": 1,
+                "trackStatus": "DRAFT",
+                "scenarioStatusSummery": [
+                    {
+                        "noOfScenarios": 1,
+                        "status": "DRAFT"
+                    }
+                ]
+            },
+            {
+                "trackId": 419,
+                "trackName": "Test2",
+                "lastUpdatedDate": "05/06/21 10:08 PM",
+                "noOfScenarios": 1,
+                "trackStatus": "DRAFT",
+                "scenarioStatusSummery": [
+                    {
+                        "noOfScenarios": 1,
+                        "status": "DRAFT"
+                    }
+                ]
+            },
+            {
+                "trackId": 416,
+                "trackName": "Track Name",
+                "lastUpdatedDate": "05/06/21 08:08 PM",
+                "noOfScenarios": 2,
+                "trackStatus": "DRAFT",
+                "scenarioStatusSummery": [
+                    {
+                        "noOfScenarios": 2,
+                        "status": "DRAFT"
+                    }
+                ]
+            },
+            {
+                "trackId": 414,
+                "trackName": "Track Name",
+                "lastUpdatedDate": "05/06/21 03:16 PM",
+                "noOfScenarios": 3,
+                "trackStatus": "DRAFT",
+                "scenarioStatusSummery": [
+                    {
+                        "noOfScenarios": 3,
+                        "status": "DRAFT"
+                    }
+                ]
+            },
+            {
+                "trackId": 413,
+                "trackName": "test",
+                "lastUpdatedDate": "05/06/21 02:35 PM",
+                "noOfScenarios": 1,
+                "trackStatus": "DRAFT",
+                "scenarioStatusSummery": [
+                    {
+                        "noOfScenarios": 1,
+                        "status": "DRAFT"
+                    }
+                ]
+            }
+        ],
+        "myTrackList": [
+            {
+                "trackId": 396,
+                "trackName": "Track_Name_Test2",
+                "lastUpdatedDate": "05/04/21 05:01 PM",
+                "noOfScenarios": 1,
+                "trackStatus": "DRAFT",
+                "scenarioStatusSummery": [
+                    {
+                        "noOfScenarios": 1,
+                        "status": "DRAFT"
+                    }
+                ]
+            },
+            {
+                "trackId": 395,
+                "trackName": "Track_Name_Test2",
+                "lastUpdatedDate": "05/04/21 04:37 PM",
+                "noOfScenarios": 1,
+                "trackStatus": "DRAFT",
+                "scenarioStatusSummery": [
+                    {
+                        "noOfScenarios": 1,
+                        "status": "DRAFT"
+                    }
+                ]
+            },
+            {
+                "trackId": 397,
+                "trackName": "Track_Name_Test2",
+                "lastUpdatedDate": "05/04/21 05:46 PM",
+                "noOfScenarios": 1,
+                "trackStatus": "DRAFT",
+                "scenarioStatusSummery": [
+                    {
+                        "noOfScenarios": 1,
+                        "status": "DRAFT"
+                    }
+                ]
+            },
+            {
+                "trackId": 416,
+                "trackName": "Track Name",
+                "lastUpdatedDate": "05/06/21 08:08 PM",
+                "noOfScenarios": 2,
+                "trackStatus": "DRAFT",
+                "scenarioStatusSummery": [
+                    {
+                        "noOfScenarios": 2,
+                        "status": "DRAFT"
+                    }
+                ]
+            },
+            {
+                "trackId": 399,
+                "trackName": "Track_Name_Test3",
+                "lastUpdatedDate": "05/05/21 10:27 AM",
+                "noOfScenarios": 1,
+                "trackStatus": "DRAFT",
+                "scenarioStatusSummery": [
+                    {
+                        "noOfScenarios": 2,
+                        "status": "DRAFT"
+                    }
+                ]
+            },
+            {
+                "trackId": 9,
+                "trackName": "TRACK_NAME_MIM2",
+                "lastUpdatedDate": "05/04/21 11:55 AM",
+                "noOfScenarios": 4,
+                "trackStatus": "DRAFT",
+                "scenarioStatusSummery": [
+                    {
+                        "noOfScenarios": 3,
+                        "status": "DRAFT"
+                    },
+                    {
+                        "noOfScenarios": 1,
+                        "status": "INVALIDATED"
+                    }
+                ]
+            },
+            {
+                "trackId": 10,
+                "trackName": "TRACK_NAME_MIM3",
+                "lastUpdatedDate": "05/04/21 11:55 AM",
+                "noOfScenarios": 3,
+                "trackStatus": "DRAFT",
+                "scenarioStatusSummery": [
+                    {
+                        "noOfScenarios": 3,
+                        "status": "DRAFT"
+                    }
+                ]
+            },
+            {
+                "trackId": 8,
+                "trackName": "TRACK_NAME_MIM1",
+                "lastUpdatedDate": "05/04/21 11:55 AM",
+                "noOfScenarios": 3,
+                "trackStatus": "DRAFT",
+                "scenarioStatusSummery": [
+                    {
+                        "noOfScenarios": 3,
+                        "status": "DRAFT"
+                    }
+                ]
+            },
+            {
+                "trackId": 11,
+                "trackName": "TRACK_NAME_MIM4",
+                "lastUpdatedDate": "05/04/21 11:55 AM",
+                "noOfScenarios": 4,
+                "trackStatus": "DRAFT",
+                "scenarioStatusSummery": [
+                    {
+                        "noOfScenarios": 3,
+                        "status": "DRAFT"
+                    },
+                    {
+                        "noOfScenarios": 1,
+                        "status": "INVALIDATED"
+                    }
+                ]
+            },
+            {
+                "trackId": 12,
+                "trackName": "TRACK_NAME_MIM5",
+                "lastUpdatedDate": "05/04/21 11:55 AM",
+                "noOfScenarios": 1,
+                "trackStatus": "DRAFT",
+                "scenarioStatusSummery": [
+                    {
+                        "noOfScenarios": 1,
+                        "status": "DRAFT"
+                    }
+                ]
+            },
+            {
+                "trackId": 13,
+                "trackName": "TRACK_NAME_MIM6",
+                "lastUpdatedDate": "05/04/21 11:55 AM",
+                "noOfScenarios": 2,
+                "trackStatus": "DRAFT",
+                "scenarioStatusSummery": [
+                    {
+                        "noOfScenarios": 2,
+                        "status": "DRAFT"
+                    }
+                ]
+            },
+            {
+                "trackId": 14,
+                "trackName": "TRACK_NAME_MIM7",
+                "lastUpdatedDate": "05/04/21 11:55 AM",
+                "noOfScenarios": 1,
+                "trackStatus": "DRAFT",
+                "scenarioStatusSummery": [
+                    {
+                        "noOfScenarios": 1,
+                        "status": "DRAFT"
+                    }
+                ]
+            },
+            {
+                "trackId": 15,
+                "trackName": "TRACK_NAME_MIM8",
+                "lastUpdatedDate": "05/04/21 11:55 AM",
+                "noOfScenarios": 1,
+                "trackStatus": "DRAFT",
+                "scenarioStatusSummery": [
+                    {
+                        "noOfScenarios": 1,
+                        "status": "INVALIDATED"
+                    }
+                ]
+            },
+            {
+                "trackId": 419,
+                "trackName": "Test2",
+                "lastUpdatedDate": "05/06/21 10:08 PM",
+                "noOfScenarios": 1,
+                "trackStatus": "DRAFT",
+                "scenarioStatusSummery": [
+                    {
+                        "noOfScenarios": 1,
+                        "status": "DRAFT"
+                    }
+                ]
+            },
+            {
+                "trackId": 420,
+                "trackName": "Track Name",
+                "lastUpdatedDate": "05/06/21 10:20 PM",
+                "noOfScenarios": 1,
+                "trackStatus": "DRAFT",
+                "scenarioStatusSummery": [
+                    {
+                        "noOfScenarios": 1,
+                        "status": "DRAFT"
+                    }
+                ]
+            },
+            {
+                "trackId": 398,
+                "trackName": "Track_Name_Test3",
+                "lastUpdatedDate": "05/05/21 10:24 AM",
+                "noOfScenarios": 1,
+                "trackStatus": "DRAFT",
+                "scenarioStatusSummery": [
+                    {
+                        "noOfScenarios": 1,
+                        "status": "DRAFT"
+                    }
+                ]
+            },
+            {
+                "trackId": 401,
+                "trackName": "Track_Name_Test2",
+                "lastUpdatedDate": "05/05/21 12:17 PM",
+                "noOfScenarios": 1,
+                "trackStatus": "DRAFT",
+                "scenarioStatusSummery": [
+                    {
+                        "noOfScenarios": 1,
+                        "status": "DRAFT"
+                    }
+                ]
+            },
+            {
+                "trackId": 413,
+                "trackName": "test",
+                "lastUpdatedDate": "05/06/21 02:35 PM",
+                "noOfScenarios": 1,
+                "trackStatus": "DRAFT",
+                "scenarioStatusSummery": [
+                    {
+                        "noOfScenarios": 1,
+                        "status": "DRAFT"
+                    }
+                ]
+            },
+            {
+                "trackId": 414,
+                "trackName": "Track Name",
+                "lastUpdatedDate": "05/06/21 03:16 PM",
+                "noOfScenarios": 3,
+                "trackStatus": "DRAFT",
+                "scenarioStatusSummery": [
+                    {
+                        "noOfScenarios": 3,
+                        "status": "DRAFT"
+                    }
+                ]
+            }
+        ]
+    }
+}

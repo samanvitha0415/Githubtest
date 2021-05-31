@@ -1,0 +1,400 @@
+.right-widget {
+  background: #FFFFFF;
+  box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.24);
+  border-radius: 8px;
+  height: auto;
+}
+
+.title {
+  font-family: Interstate-Regular;
+  font-size: 36px;
+  color: #333333;
+  text-align: left;
+  padding: 20px 0px 0px 20px;
+}
+
+.link {
+  font-family: Interstate-Regular;
+  font-size: 18px;
+  color: #056DAE;
+}
+
+.section1 {
+  background: #FFFFFF;
+  box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.24);
+  border-radius: 8px;
+  margin-left: 2px;
+  margin-right: -10px;
+  margin-top: 30px;
+
+  tr.mat-header-row {
+    height: 0px;
+  }
+
+  .dot-button {
+    color: #056DAE;
+  }
+
+  .table-header {
+    font-family: Interstate-Regular;
+    font-size: 16px;
+    color: #333333;
+    border: none;
+  }
+
+  .icons {
+    width: 24px;
+    margin-right: 5px;
+  }
+
+  .select-title {
+    font-family: Interstate-Regular;
+    font-size: 22px;
+    color: #333333;
+  }
+
+  tr.mat-row {
+    height: 65px;
+  }
+
+  ::ng-deep .mat-checkbox-frame {
+    border-color: #056DAE;
+  }
+
+  ::ng-deep .mat-checkbox-checked.mat-accent .mat-checkbox-ripple .mat-ripple-element {
+    opacity: 0.03 !important;
+    background-color: #056DAE !important;
+  }
+
+  ::ng-deep .mat-checkbox-checked.mat-accent .mat-checkbox-background,
+  .mat-checkbox-indeterminate.mat-accent .mat-checkbox-background {
+    background-color: #056DAE;
+  }
+
+  th.mat-header-cell {
+    font-family: Interstate-Regular;
+    font-size: 16px;
+    color: #333333;
+  }
+
+  .search {
+    background: #FFFFFF;
+    border: 1px solid #E5E5E5;
+    border-radius: 8px;
+    height: 36px;
+
+    .icon {
+      margin-left: 8px;
+      color: #056DAE;
+      position: absolute;
+      top: 4px;
+    }
+
+    input {
+      margin-left: 35px;
+      margin-top: 5px;
+      width: -webkit-fill-available;
+      border: unset !important;
+      font-family: Interstate-Light;
+      font-size: 14px;
+      color: #707070;
+      height: 25;
+    }
+
+    input:focus {
+      outline: none;
+    }
+  }
+
+  .filter {
+    background: #FFFFFF;
+    border: 1px solid #E5E5E5;
+    border-radius: 8px;
+    height: 36px;
+
+    .text {
+      font-family: Interstate-Regular;
+      font-size: 14px;
+      color: #696974;
+      padding-top: 3px;
+      padding-left: 5px;
+      padding-top: 8px;
+    }
+
+    ::ng-deep .mat-form-field-appearance-legacy .mat-form-field-infix {
+      margin: 0px;
+      padding: 0px
+    }
+
+    ::ng-deep .mat-form-field-underline {
+      display: none;
+    }
+
+    .field {
+      width: 62%;
+      margin-left: auto;
+      height: 36px;
+      float: left;
+      margin-right: 8px;
+    }
+
+    .select {
+      font-family: Interstate-Regular;
+      font-size: 14px;
+      color: #171725;
+    }
+
+  }
+
+  ::ng-deep .mat-option-text {
+    font-family: Interstate-Light;
+    font-size: 14px;
+    color: #333333;
+  }
+
+  .dropdownStyle {
+    font-family: Interstate-Regular;
+    font-size: 14px;
+    color: #171725;
+  }
+}
+
+.header {
+  padding-top: 30px;
+  padding-bottom: 15px;
+}
+
+.inside-section {
+  background: #FFFFFF;
+  border-radius: 16px;
+  padding: top 5;
+}
+
+.details-header {
+  font-family: Interstate-Bold;
+  font-size: 30px;
+  color: #333333;
+  text-align: left;
+}
+
+.detail-descr {
+  font-family: Interstate-Regular;
+  font-size: 22px;
+  color: #838383;
+  margin-top: 15px;
+}
+
+.scenarios {
+  padding-top: 2px;
+}
+
+.i-approved {
+  color: #60af87;
+  position: relative;
+  left: -3px;
+  font-size: 12px;
+}
+
+.i-invalidated {
+  color: red;
+  position: relative;
+  left: -3px;
+  font-size: 12px;
+}
+
+.i-draft {
+  color: #3A4E8A;
+  position: relative;
+  left: -3px;
+  font-size: 12px;
+}
+
+.i-inProgress {
+  color: #F29E3A;
+  position: relative;
+  left: -3px;
+  font-size: 12px;
+}
+
+.status-label {
+  font-family: Interstate-Regular;
+  color: #131415;
+  font-size: 12px;
+}
+
+.status {
+  margin-top: 15px;
+}
+
+.track-status {
+  font-size: 17.28px;
+  font-family: Interstate-Regular;
+  color: #131415;
+}
+
+.track-approved {
+  color: #60af87;
+  position: relative;
+  font-size: 18px;
+  margin-right: 5px;
+}
+
+.track-draft {
+  color: #3A4E8A;
+  position: relative;
+  font-size: 18px;
+  margin-right: 5px;
+}
+
+.track-inProgress {
+  color: #F29E3A;
+  position: relative;
+  font-size: 18px;
+  margin-right: 5px;
+}
+
+.view-scenario {
+  font-family: Interstate-Bold;
+  font-size: 11.52px;
+  color: #056DAE;
+  letter-spacing: 0;
+  line-height: 17.28px;
+}
+
+.main-data {
+  font-family: Interstate-Regular;
+  font-size: 18px;
+  color: #333333;
+  text-align: left;
+}
+
+::placeholder {
+  padding-left: 30px;
+}
+
+select option {
+  width: 75px;
+  margin-top: 5px;
+}
+
+.filter {
+  background: #FFFFFF;
+  border: 1px solid #E5E5E5;
+  border-radius: 8px;
+  height: 36px;
+}
+
+::ng-deep .mat-form-field-appearance-legacy .mat-form-field-infix {
+  margin: 0px;
+  padding: 0px
+}
+
+::ng-deep .mat-form-field-underline {
+  display: none;
+}
+
+.field {
+  width: 62%;
+  margin-left: auto;
+  height: 36px;
+  float: left;
+  margin-right: 8px;
+}
+
+
+table {
+  width: 100%;
+}
+
+
+.scenarioTitle {
+  font-family: Interstate-Regular;
+  font-size: 21px;
+  color: #333333;
+  text-align: center;
+  margin-top: 40px;
+}
+
+.scenarioDetails {
+  display: block;
+  padding-left: 30px;
+  padding-bottom: 15px;
+  font-family: Interstate-Regular;
+  font-size: 22px;
+  color: #333333;
+}
+
+.close.mat-button {
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 5px;
+  line-height: 14px;
+  min-width: auto;
+}
+
+.summaryText {
+  padding: 10px 0px 0px 15px;
+}
+
+.summaryDetail {
+  margin: 10px 0px 0px 0px;
+  font-family: Interstate-Regular;
+  font-size: 18px;
+  color: #333333;
+}
+
+.summaryDetail p {
+  font-family: Interstate-Regular;
+  font-size: 20px;
+  color: #333333;
+  ;
+  text-align: left;
+}
+
+.primary {
+  font-family: Interstate-Bold;
+  font-size: 12px;
+  color: #FFFFFF;
+  letter-spacing: 0;
+  text-align: center;
+  line-height: 18px;
+  background-color: #056dae;
+  border-color: #056dae;
+  padding: 10px 58px;
+  border-radius: 5px;
+  height: 40px;
+  float: left;
+}
+
+.secondary {
+  font-family: Interstate-Bold;
+  font-size: 12px;
+  color: #056dae;
+  letter-spacing: 0;
+  text-align: center;
+  line-height: 18px;
+  background-color: #ffffff;
+  border-color: #056dae;
+  padding: 10px 58px;
+  border-radius: 5px;
+  height: 40px;
+}
+
+.footer {
+  position: sticky;
+  bottom: 0;
+  z-index: 8;
+  height: 114px;
+  background: linear-gradient(rgb(248, 248, 248, 0.5) 0%, rgb(248, 248, 248, 1) 43%);
+
+  .right {
+    margin: auto;
+    text-align: start;
+  }
+
+  .left {
+    margin: auto;
+    text-align: end;
+  }
+}

@@ -1,0 +1,94 @@
+<div class="row">
+    <div class="col">
+      <div class=" row content d-flex justify-content-around">
+        <div class="col-6 main-header">Execute Track</div>
+        <div class="col-3 text-right">
+          <i class="fa fa-search"> </i>
+          <input class="search-input" type="text" placeholder="Search" (input)="searchTrackData($event.target.value)">
+        </div>
+        <div class="col-3 sorting">
+          <label for="sort">Filter by:</label>
+          <select id="sort" name="track" form="trackform" (change)=filterBy($event)>
+            <option value="all">All</option>
+            <option value="approved">Approved</option>
+            <option value="draft">Draft</option>
+            <option value="in progress">In Progress</option>
+          </select>
+        </div>
+      </div>
+     
+      
+      <mat-tab-group mat-stretch-tabs class="invisible-tabs">
+        <mat-tab >
+
+         
+          <div *ngIf="list">
+            <mat-accordion class="list-accordian" *ngFor="let card of prodTracksData;">
+             <ng-container *ngIf="card.trackStatus === 'APPROVED'" >
+              <mat-expansion-panel>
+                <mat-expansion-panel-header>
+                  <mat-panel-title>
+                    <div class="col-3">
+                      <div class="col-12 detail-header">{{card.trackName}}</div>
+                      <div class="col-12 detail-descr">ID: {{card.trackId}} {{card.lastUpdatedDate}}</div>
+                    </div>
+                    <div class="col-2 scenarios">
+                      <span>{{card.noOfScenarios}}</span>Scenarios
+                    </div>
+                    <div class="col-2 status-dot">
+                      <i class="fa fa-circle"
+                        [ngClass]="{'in-progress': card.status === 'In Progress', 'draft': card.status === 'Draft', 'approved': card.trackStatus === 'APPROVED'}"></i>
+                      {{card.trackStatus}}
+                    </div>
+  
+                    <div class="col-2 list-track" (click)="veiwTrack($event, card.trackId)">
+                      <a href="javascript:void(0)">View Track</a>
+                    </div>
+                    <div class="col p-0 text-center">
+                      <img style="width: 18px;margin-top: 10px;" *ngIf="card.status === 'Approved'"
+                        src="./assets/images/viewTracks.svg" (click)="showTrack($event)">
+                    </div>
+                    
+                    
+  
+                    <mat-icon >{{icon  ? 'keyboard_arrow_down' : 'keyboard_arrow_up' }}</mat-icon>
+                    <div class="col-1 p-0 text-center" (click)="radio($event , card.trackId)" >
+                        <mat-radio-button class="smallRadio" style="margin-top: 8px;" [value]="i"></mat-radio-button>
+                      </div>  
+                </mat-panel-title>
+                </mat-expansion-panel-header>
+                <div class="row custom-body">
+                  <div class="text-center col-3">
+                    <label class="scenarios-acc">Draft</label>
+                    <label class="count">4</label>
+                  </div>
+                  <div class="text-center col-3">
+                    <label class="scenarios-acc">In Progress</label>
+                    <label class="count">6</label>
+                  </div>
+                  <div class="text-center col-3">
+                    <label class="scenarios-acc">Invalidated</label>
+                    <label class="count">3</label>
+                  </div>
+                  <div class="text-center col-3">
+                    <label class="scenarios-acc">Completed</label>
+                    <label class="count">10</label>
+                  </div>
+  
+                </div>
+              </mat-expansion-panel>
+
+            </ng-container>
+
+  
+            </mat-accordion>
+          </div>
+        </mat-tab>
+     
+  
+      </mat-tab-group>
+  
+  
+      <app-progress-nav [step]='1'></app-progress-nav>
+    </div>
+  </div>

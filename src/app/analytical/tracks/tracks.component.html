@@ -1,0 +1,205 @@
+<div class="row">
+  <div class="col">
+    <div class="row">
+      <div class="col" style="margin: auto;">
+        <span class="title">Tracks</span>
+      </div>
+      <div class="col">
+        <div class="row m-0">
+          <div class="col p-0 search">
+            <mat-icon class="icon">search</mat-icon>
+            <input type="text" placeholder="Search">
+          </div>
+          <div class="col p-0 filter">
+            <div class="row m-0">
+              <div class="text">Filter By:
+              </div>
+              <mat-form-field class="field">
+                <mat-select value="All" [disableOptionCentering]="false" class="select">
+                  <mat-option value="All">All</mat-option>
+                  <mat-option value="Draft">Draft</mat-option>
+                  <mat-option value="In Progress">In Progress</mat-option>
+                  <mat-option value="Approved">Approved</mat-option>
+                </mat-select>
+              </mat-form-field>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row tracks">
+      <div class="col-12">
+        <mat-tab-group>
+          <mat-tab label="My Tracks">
+            <div class="row headers m-0">
+              <div class="col-4" style="margin:auto">Track Details</div>
+              <div class="col" style="margin:auto"># Scenarios</div>
+              <div class="col" style="margin:auto">Status</div>
+              <div class="col-3" style="margin:auto"></div>
+            </div>
+            <div class="row m-0" *ngFor="let track of filteredMyTrackList;">
+              <mat-accordion class="list-accordian">
+                <mat-expansion-panel>
+                  <mat-expansion-panel-header>
+                    <mat-panel-title>
+                      <div class="col-4">
+                        <div class="col-12 p-0 detail-header">{{track.trackName}}</div>
+                        <div class="col-12 p-0 detail-descr">ID: {{track.trackId}} | {{track.lastUpdatedDate}}</div>
+                      </div>
+                      <div class="col scenarios">
+                        <span>{{track.noOfScenarios}}</span>Scenarios
+                      </div>
+                      <div class="col status-dot">
+                        <div [ngClass]="{'in-progress': track.trackStatus === 'INPROGRESS',
+                          'draft': track.trackStatus === 'DRAFT',
+                          'approved': track.trackStatus === 'APPROVED' || track.trackStatus === 'FINALIZED'
+                          || track.trackStatus === 'COMPLETED'}">
+                        </div>
+                        {{track.trackStatus.charAt(0) + track.trackStatus.slice(1).toLowerCase() }}
+                      </div>
+                      <div class="col-3 p-0">
+                        <div class="row m-0">
+                          <div class="col-6 p-0 list-track text-center" (click)="veiwTrack($event, track.trackId)">
+                            View Track
+                          </div>
+                          <div class="col p-0 text-center">
+                            <img style="width: 18px;margin-top: 10px;" *ngIf="track.trackStatus === 'Approved'"
+                              src="./assets/images/list.svg" (click)="showTrack($event)">
+                          </div>
+                          <div class="col p-0 text-center" (click)="menuClick($event)">
+                            <button class="dot-button" mat-icon-button [matMenuTriggerFor]="menu" aria-label="Menu">
+                              <mat-icon>more_vert</mat-icon>
+                            </button>
+                          </div>
+                          <div class="text-center menu-box">
+                            <mat-menu #menu="matMenu">
+                              <button routerLink="../cloneTrack/{{track.trackId}}" class="dropdownStyle" mat-menu-item>
+                                <span>Clone</span>
+                              </button>
+                            </mat-menu>
+                          </div>
+                        </div>
+                      </div>
+                    </mat-panel-title>
+                  </mat-expansion-panel-header>
+                  <div class="row custom-body">
+                    <div class="text-center col">
+                      <label class="scenarios-acc">Draft</label>
+                      <label class="count">{{getScenarioCount("DRAFT",track.scenarioStatusSummery)}}</label>
+                    </div>
+                    <div class="text-center col">
+                      <label class="scenarios-acc">In Progress</label>
+                      <label class="count">{{getScenarioCount("INPROGRESS",track.scenarioStatusSummery)}}</label>
+                    </div>
+                    <div class="text-center col">
+                      <label class="scenarios-acc">Scheduled</label>
+                      <label class="count">{{getScenarioCount("SCHEDULED",track.scenarioStatusSummery)}}</label>
+                    </div>
+                    <div class="text-center col">
+                      <label class="scenarios-acc">Invalidated</label>
+                      <label class="count">{{getScenarioCount("INVALIDATED",track.scenarioStatusSummery)}}</label>
+                    </div>
+                    <div class="text-center col">
+                      <label class="scenarios-acc">Completed</label>
+                      <label class="count">{{getScenarioCount("COMPLETED",track.scenarioStatusSummery)}}</label>
+                    </div>
+                  </div>
+                </mat-expansion-panel>
+              </mat-accordion>
+            </div>
+          </mat-tab>
+          <mat-tab label="Team Tracks">
+            <div class="row headers m-0">
+              <div class="col-4" style="margin:auto">Track Details</div>
+              <div class="col" style="margin:auto"># Scenarios</div>
+              <div class="col" style="margin:auto">Status</div>
+              <div class="col-3" style="margin:auto"></div>
+            </div>
+            <div class="row m-0" *ngFor="let track of filteredTeamTracks;">
+              <mat-accordion class="list-accordian">
+                <mat-expansion-panel>
+                  <mat-expansion-panel-header>
+                    <mat-panel-title>
+                      <div class="col-4">
+                        <div class="col-12 p-0 detail-header">{{track.trackName}}</div>
+                        <div class="col-12 p-0 detail-descr">ID: {{track.trackId}} | {{track.lastUpdatedDate}}</div>
+                      </div>
+                      <div class="col scenarios">
+                        <span>{{track.noOfScenarios}}</span>Scenarios
+                      </div>
+                      <div class="col status-dot">
+                        <div [ngClass]="{'in-progress': track.trackStatus === 'INPROGRESS',
+                            'draft': track.trackStatus === 'DRAFT',
+                            'approved': track.trackStatus === 'APPROVED' || track.trackStatus === 'FINALIZED'
+                            || track.trackStatus === 'COMPLETED'}">
+                        </div>
+                        {{track.trackStatus.charAt(0) + track.trackStatus.slice(1).toLowerCase() }}
+                      </div>
+                      <div class="col-3 p-0">
+                        <div class="row m-0">
+                          <div class="col-6 p-0 list-track text-center" (click)="veiwTrack($event, track.trackId)">
+                            View Track
+                          </div>
+                          <div class="col p-0 text-center">
+                            <img style="width: 18px;margin-top: 10px;" *ngIf="track.trackStatus === 'Approved'"
+                              src="./assets/images/list.svg" (click)="showTrack($event)">
+                          </div>
+                          <div class="col p-0 text-center" (click)="menuClick($event)">
+                            <button class="dot-button" mat-icon-button [matMenuTriggerFor]="menu" aria-label="Menu">
+                              <mat-icon>more_vert</mat-icon>
+                            </button>
+                          </div>
+                          <div class="text-center menu-box">
+                            <mat-menu #menu="matMenu">
+                              <button routerLink="../cloneTrack/{{track.trackId}}" class="dropdownStyle" mat-menu-item>
+                                <span>Clone</span>
+                              </button>
+                            </mat-menu>
+                          </div>
+                        </div>
+                      </div>
+                    </mat-panel-title>
+                  </mat-expansion-panel-header>
+                  <div class="row custom-body">
+                    <div class="text-center col">
+                      <label class="scenarios-acc">Draft</label>
+                      <label class="count">{{getScenarioCount("DRAFT",track.scenarioStatusSummery)}}</label>
+                    </div>
+                    <div class="text-center col">
+                      <label class="scenarios-acc">In Progress</label>
+                      <label class="count">{{getScenarioCount("INPROGRESS",track.scenarioStatusSummery)}}</label>
+                    </div>
+                    <div class="text-center col">
+                      <label class="scenarios-acc">Scheduled</label>
+                      <label class="count">{{getScenarioCount("SCHEDULED",track.scenarioStatusSummery)}}</label>
+                    </div>
+                    <div class="text-center col">
+                      <label class="scenarios-acc">Invalidated</label>
+                      <label class="count">{{getScenarioCount("INVALIDATED",track.scenarioStatusSummery)}}</label>
+                    </div>
+                    <div class="text-center col">
+                      <label class="scenarios-acc">Completed</label>
+                      <label class="count">{{getScenarioCount("COMPLETED",track.scenarioStatusSummery)}}</label>
+                    </div>
+                  </div>
+                </mat-expansion-panel>
+              </mat-accordion>
+            </div>
+          </mat-tab>
+        </mat-tab-group>
+      </div>
+    </div>
+    <div class="row m-0 footer">
+      <div class="col-6 left">
+        <button type="button" class="btn secondary" routerLink="../approveTrack">Approve Track</button>
+      </div>
+      <div class="col-6 right">
+        <button type="button" class="btn primary" routerLink="../track/create">New Track</button>
+      </div>
+    </div>
+  </div>
+  <div class="col-auto right-widget">
+    <app-track-summary [data]="summaryData"></app-track-summary>
+  </div>
+</div>
+<br><br>

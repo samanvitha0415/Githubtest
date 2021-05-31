@@ -1,0 +1,94 @@
+.primary {
+	font-family: Interstate-Bold;
+	font-size: 18px;
+	color: #ffffff;
+	letter-spacing: 0;
+	text-align: center;
+	line-height: 18px;
+	background-color: #056dae;
+	border-color: #056dae;
+    border-radius: 5px;
+    &.cancel{
+        background-color: #fff;
+        color: #056DAE;
+
+    }
+}
+
+.progress-navigation {
+    color: #BBBBBB ;
+    div{
+        font-family: Interstate-Bold;
+        font-size: 19.2px;
+        
+	}
+	
+    .steps{
+        display: flex;
+        justify-content: space-between;
+        div{
+            width:150px;
+        }
+    }
+	.circle {
+		display: inline-block;
+		margin-right: 11px;
+		width: 25px;
+		height: 25px;
+		line-height: 25px;
+		border-radius: 50%;
+		font-size: 11px;
+		color: #fff;
+		text-align: center;
+        background-color: #a2a2a2;
+        font-family: Interstate-Regular;
+        font-size: 16.8px;
+		&.active {
+			background-color: #056dae;
+		}
+	}
+
+	.done {
+        display: inline-block;
+		margin-right: 11px;
+		width: 31.2px;
+		height: 31.2px;
+		line-height: 31.2px;
+		border-radius: 50%;
+		font-size: 11px;
+		color: #fff;
+		text-align: center;
+        background-color: #056dae;
+        font-family: Interstate-Regular;
+        font-size: 16.8px;
+	}
+
+	::ng-deep .mat-icon {
+		position: relative;
+		margin-top: -5px;
+		top: 5px;
+	}
+	
+
+	.progress-buttons {
+        color: #fff ;
+		div {
+			display: inline-block;
+			margin: 0 3px;
+			.btn {
+                width: 186px;
+                height: 50px;
+			}
+		}
+	}
+	line-height: 75px;
+	display: flex;
+	margin-top: 50px;
+	justify-content: space-between;
+
+	&.no-progress{
+		justify-content: center;
+
+	}
+	
+}

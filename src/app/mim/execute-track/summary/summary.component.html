@@ -1,0 +1,108 @@
+<div class="row">
+    <div class="col-6">
+      <div class="row">
+        <div class="track-name col-auto" style="padding-right: 0px">
+          <span>Track Name</span>
+        </div>
+        <div class="col-auto p-0">
+          
+        </div>
+      </div>
+      <br>
+
+      <br>
+    </div>
+    <div class="col-6">
+      <button class="btn primary discard" (click)="discard()">Discard</button>
+    </div>
+  </div>
+  
+  <div class="row m-0">
+    <div class="col section1">
+      <div class="row m-0" style="margin: 30px 10px !important;">
+        <div class="title">Summary</div>
+      </div>
+      <div class="row m-0" style="margin: 0px 10px !important;">
+        <div class="text">{{ trackData.trackNotes }}</div>
+      </div>
+      <br>
+
+    </div>
+  </div>
+  <div class="row m-0">
+    <div class="col section2">
+      <div class="row m-0" style="margin: 30px 10px !important;">
+        <div class="col">
+          <div class="row m-0">
+            <div class=" col p-0 title">
+              <div> Details</div>
+            </div>
+            <div class="col p-0">
+              <!-- <div class="button">
+                <div style="margin-top: 7px;">
+                  <mat-icon style="font-size: 12px;">edit</mat-icon> Edit
+                </div>
+              </div> -->
+            </div>
+          </div>
+          <div class="row m-0" style="margin-top: 35px !important">
+            <div class="col-4 p-0">
+              <div class="row m-0">
+                <span class="detail-header">CAMPAIGN ID</span>
+              </div>
+              <div class="row m-0" style="margin-top: 25px !important">
+                <span class="detail-text">{{ allScenarios }}</span>
+              </div>
+            </div>
+            <div class="col-4 p-0">
+              <div class="row m-0">
+                <span class="detail-header">SCENARIO NAME</span>
+              </div>
+              <div class="row m-0" style="margin-top: 25px !important">
+                <span class="detail-text">{{ allScenariosFull[0].scenarioName }}</span>
+              </div>
+            </div>
+            <div class="col-4 p-0">
+              <div class="row m-0">
+                <span class="detail-header">SAMPLE SIZE</span>
+              </div>
+              <div class="row m-0" style="margin-top: 25px !important">
+
+                <div *ngFor="let element of trackData?.campaignDataset;" class="detail-text detail-text-sub">
+                <span>Dataset:  {{  element.datasetName }} </span> <br>  <span>Sample Size: {{  element.sampleSize }}%</span>
+                </div>
+
+              </div>
+            </div>
+          </div>
+          <div class="row m-0" style="margin-top: 35px !important">
+            <div class="col-4 p-0">
+              <div class="row m-0">
+                <span class="detail-header">OVERRIDE CANNIBALIZATION</span>
+              </div>
+              <div class="row m-0" style="margin-top: 25px !important">
+                <div *ngFor="let element of trackData?.campaignCannibalization;" class="detail-text  detail-text-sub">
+                  {{  element.cannibalizationRule }}
+                </div>
+              </div>
+            </div>
+            <div class="col-4 p-0">
+              <div class="row m-0">
+                <span class="detail-header">CAMPAIGN BUDGET</span>
+              </div>
+              <div class="row m-0" style="margin-top: 25px !important">
+                <span class="detail-text">{{ trackData.campaignBudget }}</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <br>
+    </div>
+  </div>
+
+
+ 
+  <app-progress-nav [step]='5'></app-progress-nav>
+ 
+  

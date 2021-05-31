@@ -1,0 +1,22 @@
+<div class="leftNav" [ngClass]="classes" (mouseover)="classes='showLable'" (mouseout)="classes=''">
+  <div class="item-container">
+    <div class="item" routerLink="./" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
+      <span class="marker"></span>
+      <img src="./assets/images/home.svg" style="width: 26px">
+      <span class="caption">Home</span>
+    </div>
+    <div class="item" routerLink="tracks" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
+      <span class="marker"></span>
+      <img src="./assets/images/list.svg" style="width: 26px">
+      <span class="caption">Tracks</span>
+    </div>
+    <div class="item" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
+      <img src="./assets/images/bar-chart.png" style="width: 26px">
+      <span class="caption">Analytics</span>
+    </div>
+    <div class="item" routerLink="/login">
+      <img src="./assets/images/profile1.svg">
+      <span class="caption" style="color: #000000;">Sign Out</span>
+    </div>
+  </div>
+</div>

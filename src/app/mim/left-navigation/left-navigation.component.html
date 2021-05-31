@@ -1,0 +1,21 @@
+<div class="leftNav" [ngClass]="classes" (mouseover)="classes='showLable'" (mouseout)="classes=''">
+    <div class="item-container">
+        <div class="item" routerLink="./" (click)="route('home')" [ngClass]="routerClass=='home'?'active':'item'">
+            <img src="./assets/images/home.svg">
+            <span class="caption">Home</span>
+        </div>
+        <div class="item" routerLink="track" (click)="route('track')" [ngClass]="routerClass=='track'?'active':'item'">
+            <img src="./assets/images/Track.svg">
+            <span class="caption">Tracks</span>
+        </div>
+        <div class="item" [ngClass]="routerClass=='viewtrack'?'active':'item'">
+            <img src="./assets/images/bar-chart.png">
+            <span class="caption">Analytics</span>
+        </div>
+        <div class="item" routerLink="" (click)="route('signOut')" [ngClass]="routerClass=='signOut'?'active':'item'">
+            <img src="./assets/images/navUserPerson.svg">
+            <span class="caption">Sign Out</span>
+        </div>
+    </div>
+</div>
+     

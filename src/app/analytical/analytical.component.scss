@@ -1,0 +1,54 @@
+.analytical-container {
+  background-color: #f8f8f8;
+  width: 100%;
+}
+
+.header-title {
+  font-family: Interstate-Bold;
+  font-size: 26px;
+  color: #FFFFFF;
+  text-align: left;
+  line-height: 32px;
+  padding-left: 35px;
+  padding-right: 20px;
+  border-right-style: solid;
+  border-width: 1px;
+}
+
+.header {
+  background: #002A54;
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.50);
+  height: 77px;
+  margin-left: 0px;
+}
+
+.citi-logo {
+  width: 49px;
+  height: 32px;
+  float: right;
+  margin-right: 30px;
+}
+
+.user-role {
+  font-family: Interstate-Light;
+  font-size: 21px;
+  color: #FFFFFF;
+  letter-spacing: 0;
+  line-height: 26px;
+  padding-left: 20px;
+}
+
+.left-nav {
+  min-width: 114px;
+  border-right: .5px solid rgb(0 0 0 / 6%);
+  position: relative;
+}
+
+.home {
+  margin-left: 2px;
+  margin-top: 35px
+}
+
+.row {
+    margin-right: 0px;
+}

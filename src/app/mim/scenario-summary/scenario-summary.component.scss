@@ -1,0 +1,64 @@
+  .right-widget {
+    background: #FFFFFF;
+    box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.24);
+    border-radius: 8px;
+    width: auto;
+    margin-top: 35px;
+    height: auto;
+    margin-right: 5px;
+    }
+    .summaryText {
+      padding: 10px 0px 0px 15px;
+    }
+
+    .scenarioTitle {
+      font-family: Interstate-Regular;
+      font-size: 22px;
+      color: #333333;
+      text-align: center;
+      margin-top: 40px;
+    }
+   
+    .scenarioDetails {
+      display: block;
+      padding-left: 30px;
+      padding-bottom: 15px;
+      font-family: Interstate-Regular;
+      font-size: 22px;
+      color: #333333;
+    }
+    .summaryDetail {
+      margin: 10px 0px 0px 0px;
+      font-family: Interstate-Regular;
+      font-size: 14px;
+      color: #333333;
+    }
+
+    label {
+      font-size: 18px;
+    }
+
+    .summaryDetail p{
+      font-family: Interstate-Regular;
+      font-size: 14px;
+      color: #333333;;
+      text-align: left;
+
+    }
+  .close.mat-button {
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 5px;
+    line-height: 14px;
+    min-width: auto;
+  }
+  
+  .summaryText {
+    padding: 10px 0px 0px 15px;
+  }
+  
+  .summaryDetail {
+    margin: 10px 0px 0px 0px;
+  }
+  

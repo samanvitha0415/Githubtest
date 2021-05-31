@@ -1,0 +1,304 @@
+.right-widget {
+    background: #FFFFFF;
+    box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.24);
+    border-radius: 8px;
+    width: 300px;
+    height: auto;
+    margin-right: 5px;
+    }
+    .backlist{
+    right:0px;
+    font-family: Interstate-Bold;
+      font-size: 16px;
+      color: #056DAE;
+      text-align: right;
+    }
+    
+     
+    .title {
+    font-family: Interstate-Regular;
+    font-size: 36px;
+    color: #333333;
+    text-align: left;
+    padding: 20px 0px 0px 20px;
+    }
+    .back a{
+    padding-left: 0px;
+    margin-right: 10px;
+    }
+    .section1 {
+    background: #FFFFFF;
+    box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.24);
+    border-radius: 8px;
+    margin-left: 2px;
+    margin-right: -10px;
+    margin-top: 35px;
+    height: auto;
+    }
+    .header{
+    padding: 15px 1px 1px 0;
+    justify-content: space-between;
+    }
+    .inside-section{
+        background: #FFFFFF;
+        border-radius: 16px;
+        padding: top 5;
+        width:996px ;
+        height: auto;
+    }
+    .clone{
+        font-family: Interstate-Bold;
+        font-size: 16px;
+        color: #056DAE;
+        text-align: left;
+        }
+        .clone img{
+        width: 18px;
+        height: 18px;
+        }
+    
+    .notes{
+    font-family: Interstate-Bold;
+    font-size: 16px;
+    color: #056DAE;
+    text-align: right;
+    cursor: pointer;
+    }
+    .notes img{
+    width: 18px;
+    height: 18px;
+    }
+    .details-header{
+    max-width: 100%;
+    font-family: Interstate-Bold;
+    font-size: 30px;
+    color: #333333;
+    text-align: left;
+    flex-basis: 70%;
+
+
+    }
+    .detail-descr{
+    font-family: Interstate-Regular;
+    font-size: 22px;
+    color: #838383;
+    margin-top: 2px;
+    }
+    .scenarios{
+    padding-top: 2px;
+    
+    }
+    .i-approved{
+    color: #60af87;
+    position: relative;
+    width: 18.3px;
+    height: 17.4px;
+    left: -1px;
+    padding-top: 5px;
+    }
+    .status-label{
+    font-family: Interstate-Regular;
+    font-size: 17.28px;
+    color: #131415;
+    }
+    .bottom-action-button {
+      max-width: 150px;
+      margin: 15px;
+      position: sticky;
+      
+    }
+    
+    .bottom-action {
+    
+      background-image: linear-gradient(180deg, rgba(248,248,248,0.00) 34%, rgba(248,248,248,0.89) 56%, #F8F8F8 77%);
+      position: sticky;
+      top: 2;
+      bottom: 0;
+      z-index: 3;
+     
+    }
+    
+    .content{ 
+        background: #FFFFFF;
+        border-radius: 16px;
+        margin-top: 10px;
+        padding: top 5;
+        width:auto;
+        height: 50px;
+          &.justify-content-around{
+            justify-content: space-between!important;
+           }
+    }
+    .main-header{
+        font-family: Interstate-Regular;
+    font-size: 16px;
+    color: #333333;
+    text-align: left;
+        width:65%;
+        padding-left:20px;
+        height: 3.9%;
+    }
+    .list-group{
+        padding-top: 2px;
+        list-style: none;
+    }
+    .list-group-item{
+    //     background-color: blue($color: #bb1212);
+    padding:0 !important;
+    // .radio{
+    //   position: relative;
+    //   left:33px;
+    //   width:20px;
+    // }
+
+    .col-3{
+     &.sorting-1{
+      &.text-right{
+        font-weight: bold;
+      }    
+     }
+    }
+  }
+    
+    .search-input{
+        background: #FFFFFF;
+      border: 1px solid #E5E5E5;
+      border-radius: 8px;
+      height: 30px;
+      width: 165px;
+      margin-right: 5px;
+      }
+      .fa-search{
+        position: relative;
+        transform: scaleX(1);
+        left:23px;
+        color: #5987ef;
+        left: 21px;
+        top: 1px;
+      }
+      ::placeholder {
+        padding-left: 30px;
+      }
+    
+      .sorting-1{
+        background: #FFFFFF;
+        // border: 1px solid #E5E5E5;
+        // border-radius: 8px;
+        max-height: 30px;
+        max-width: 165px;
+        margin-left:8px;
+        }
+      .sorting{
+        background: #FFFFFF;
+        border: 1px solid #E5E5E5;
+        border-radius: 8px;
+        max-height: 30px;
+        max-width: 165px;
+        margin-left:8px;
+        }
+        .sorting select{
+          border: none;
+          outline: none;
+          width: 78px;
+          padding-top: 5px;
+        }
+        select option{
+          width: 75px;
+          margin-top: 5px;
+        }
+    
+    
+    
+
+
+
+// Move this to scss in new component later
+// Move this to scss in new component later
+.primary {
+	font-family: Interstate-Bold;
+	font-size: 18px;
+	color: #ffffff;
+	letter-spacing: 0;
+	text-align: center;
+	line-height: 18px;
+	background-color: #056dae;
+	border-color: #056dae;
+    border-radius: 5px;
+    &.cancel{
+        background-color: #fff;
+        color: #056DAE;
+
+    }
+}
+.progress-navigation {
+    color: #BBBBBB ;
+    div{
+        font-family: Interstate-Bold;
+        font-size: 19.2px;
+        
+    }
+    .steps{
+        display: flex;
+        justify-content: space-between;
+        div{
+            width:150px;
+        }
+    }
+	.circle {
+		display: inline-block;
+		margin-right: 11px;
+		width: 25px;
+		height: 25px;
+		line-height: 25px;
+		border-radius: 50%;
+		font-size: 11px;
+		color: #fff;
+		text-align: center;
+        background-color: #a2a2a2;
+        font-family: Interstate-Regular;
+        font-size: 16.8px;
+		&.active {
+			background-color: #056dae;
+		}
+	}
+
+	.progress-buttons {
+        color: #fff ;
+		div {
+			display: inline-block;
+			margin: 0 3px;
+			.btn {
+                width: 186px;
+                height: 50px;
+			}
+		}
+	}
+	line-height: 75px;
+	display: flex;
+	margin-top: 50px;
+	justify-content: space-between;
+	
+}
+
+
+::ng-deep .mat-checkbox-frame {
+  border-color: #056DAE;
+}
+
+::ng-deep .mat-checkbox-checked.mat-accent .mat-checkbox-ripple .mat-ripple-element {
+  opacity: 0.03 !important;
+  background-color: #056DAE !important;
+}
+
+::ng-deep .mat-checkbox-checked.mat-accent .mat-checkbox-background,
+.mat-checkbox-indeterminate.mat-accent .mat-checkbox-background {
+  background-color: #056DAE;
+}
+
+
+
+
+
+
+
+

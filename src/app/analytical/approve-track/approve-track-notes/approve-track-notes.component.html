@@ -1,0 +1,31 @@
+<div class="row">
+  <div class="track-name">
+    <span>Approve Track</span>
+  </div>
+</div>
+<br>
+<div class="row m-0">
+  <div class="col-12 section1">
+    <div class="row header" style="margin: 0 auto;">
+      <div class="col-8 details-header">{{track?.trackName}}</div>
+      <div class="col-4">
+        <div class="track-desc">
+          <div class="detail-descr">ID: {{track?.trackId}} | {{track?.lastUpdatedDate}}</div>
+        </div>
+      </div>
+    </div>
+    <mat-divider></mat-divider>
+    <div class="row notes m-0">
+      <textarea [(ngModel)]="approveTrackService.trackNotes" class="text" placeholder="Enter Your Notes Here"></textarea>
+    </div>
+  </div>
+</div>
+
+<div class="row footer">
+  <div class="col-6 left">
+    <button type="button" class="btn secondary" routerLink="../../approveTrackView/{{track?.trackId}}">Back</button>
+  </div>
+  <div class="col-6 right">
+    <button type="button" class="btn primary" routerLink="../../approveTrackSummary/{{track?.trackId}}">Next</button>
+  </div>
+</div>

@@ -1,0 +1,105 @@
+<div class="row">
+  <div class="col">
+    <div class="row">
+      <div class="col-7" style="margin: auto;">
+        <span class="title">Approve Tracks</span>
+      </div>
+      <div class="col-5">
+        <div class="row m-0">
+          <div class="col-6" style="padding-left: 0px;">
+            <div class="search">
+              <mat-icon class="icon">search</mat-icon>
+              <input type="text" placeholder="Search">
+            </div>
+          </div>
+          <div class="col-6 p-0 filter">
+            <div class="row m-0">
+              <div class="text">Filter By:
+              </div>
+              <mat-form-field class="field">
+                <mat-select value="All" [disableOptionCentering]="false" class="select">
+                  <mat-option value="All">All</mat-option>
+                  <mat-option value="Draft">Draft</mat-option>
+                  <mat-option value="In Progress">In Progress</mat-option>
+                  <mat-option value="Approved">Approved</mat-option>
+                </mat-select>
+              </mat-form-field>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row tracks">
+      <div class="col-12">
+        <mat-radio-group>
+          <div class="row m-0" *ngFor="let card of allTracks; let i = index">
+            <mat-accordion class="list-accordian">
+              <mat-expansion-panel>
+                <mat-expansion-panel-header>
+                  <mat-panel-title>
+                    <div class="col-3">
+                      <div class="col-12 p-0 detail-header">{{card.trackName}}</div>
+                      <div class="col-12 p-0 detail-descr">ID: {{card.trackId}} | {{card.lastUpdatedDate}}</div>
+                    </div>
+                    <div class="col-2 scenarios">
+                      <span>{{card.noOfScenarios}}</span>Scenarios
+                    </div>
+                    <div class="col status-dot">
+                      <div
+                        [ngClass]="{'in-progress': card.trackStatus === 'INPROGRESS', 'draft': card.trackStatus === 'DRAFT', 'approved': card.trackStatus === 'APPROVED'}">
+                      </div>
+                      {{card.trackStatus}}
+                    </div>
+                    <div class="col-2 p-0">
+                      <div class="row m-0">
+                        <div class="col-6 p-0 list-track text-center" routerLink="../viewTrack/{{card.trackId}}"
+                          (click)="veiwTrack($event)">
+                          View Track
+                        </div>
+                        <div class="col p-0 text-center" (click)="menuClick($event)">
+                          <mat-radio-button (change)="selectTrack($event)" style="margin-top: 8px;" [value]="card">
+                          </mat-radio-button>
+                        </div>
+                      </div>
+                    </div>
+                  </mat-panel-title>
+                </mat-expansion-panel-header>
+                <div class="row custom-body">
+                  <div class="text-center col">
+                    <label class="scenarios-acc">Draft</label>
+                    <label class="count">{{getScenarioCount("DRAFT",card.scenarioStatusSummery)}}</label>
+                  </div>
+                  <div class="text-center col">
+                    <label class="scenarios-acc">In Progress</label>
+                    <label class="count">{{getScenarioCount("INPROGRESS",card.scenarioStatusSummery)}}</label>
+                  </div>
+                  <div class="text-center col">
+                    <label class="scenarios-acc">Scheduled</label>
+                    <label class="count">{{getScenarioCount("SCHEDULED",card.scenarioStatusSummery)}}</label>
+                  </div>
+                  <div class="text-center col">
+                    <label class="scenarios-acc">Invalidated</label>
+                    <label class="count">{{getScenarioCount("INVALIDATED",card.scenarioStatusSummery)}}</label>
+                  </div>
+                  <div class="text-center col">
+                    <label class="scenarios-acc">Completed</label>
+                    <label class="count">{{getScenarioCount("COMPLETED",card.scenarioStatusSummery)}}</label>
+                  </div>
+                </div>
+              </mat-expansion-panel>
+            </mat-accordion>
+          </div>
+        </mat-radio-group>
+      </div>
+    </div>
+    <div class="row m-0 footer">
+      <div class="col-6 left">
+        <button type="button" class="btn secondary" routerLink="../tracks">Cancel</button>
+      </div>
+      <div class="col-6 right">
+        <button [disabled]="!selectedTrack" type="button" class="btn primary"
+          routerLink="../approveTrackView/{{selectedTrack?.trackId}}">Next</button>
+      </div>
+    </div>
+  </div>
+</div>

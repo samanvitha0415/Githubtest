@@ -1,0 +1,202 @@
+<div class="row">
+  <div class="col-9">
+    <div class=" row content d-flex justify-content-around">
+      <div class="col-5 main-header">Tracks</div>
+      <div class="p-0 search">
+        <mat-icon class="icon">search</mat-icon>
+        <input type="text" placeholder="Search" (input)="searchTrackData($event.target.value)">
+      </div>
+      <div class="col-4 sorting">
+        <label for="sort">Filter by:</label>
+        <select id="sort" name="track" form="trackform" (change)=filterBy($event)>
+          <option value="all">All</option>
+          <option value="approved">Approved</option>
+          <option value="draft">Draft</option>
+          <option value="in progress">In Progress</option>
+        </select>
+      </div>
+    </div>
+    <mat-tab-group (selectedTabChange)="onTabClick($event)" mat-stretch-tabs
+                   class="example-stretched-tabs mat-elevation-z4">
+      <mat-tab label="Pre Production Tracks">
+        <div class="row headers m-0">
+          <div class="col-2" style="margin: auto;">Track Details</div>
+          <div class="col-3 scenarios-header" style="margin: auto; text-align:center;"># Scenarios</div>
+          <div class="col-2" style="margin: auto;">Status</div>
+          <div class="col-5" style="margin: auto;"></div>
+        </div>
+        <div *ngIf="list">
+          <mat-accordion class="list-accordian" *ngFor="let card of prodTracksData;">
+            <mat-expansion-panel>
+              <mat-expansion-panel-header>
+                <mat-panel-title>
+                  <div class="col-3">
+                    <div class="col-12 detail-header">{{card.trackName}}</div>
+                    <div class="col-12 detail-descr">{{card.trackId}} | {{card.lastUpdatedDate | date: 'dd/MM/yyyy hh:mm a'}}</div>
+                  </div>
+                  <div class="col-2 scenarios">
+                    <span>{{card.noOfScenarios}}</span>Scenarios
+                  </div>
+                  <div class="col-2 status-dot">
+                    <i class="fa fa-circle" [ngClass]="{'in-progress': card.trackStatus === 'IN PROGRESS', 'draft': card.trackStatus === 'DRAFT',
+                    'approved': card.trackStatus === 'APPROVED' || card.trackStatus === 'FINALIZED'
+                        || card.trackStatus === 'COMPLETED'}">
+                    </i>
+                    {{card.trackStatus | titlecase}}
+                  </div>
+
+                  <!-- <div class="col-2 list-track">
+                    <a routerLink="/mim/viewtrack/{{card.trackId}}">View Track</a>
+                    <a href="javascript:void(0)" (click)>View Track</a>
+                  </div> -->
+                  <div class="col-2 p-0 list-track text-center" (click)="veiwTrack($event, card.trackId)">
+                    <a href="javascript:void(0)">View Track</a>
+                  </div>
+                  <div class="col p-0 text-center">
+                    <img style="width: 18px;margin-top: 10px;" *ngIf="card.trackStatus === 'APPROVED'"
+                         src="./assets/images/viewTracks.svg" (click)="showTrack($event)">
+                  </div>
+                  <div class="col-1 p-0 text-center" (click)="menuClick($event)">
+                    <button class="dot-button" mat-icon-button [matMenuTriggerFor]="menu" aria-label="Menu">
+                      <img src="./assets/images/more-vertical.svg" width="18px" height="18px">
+                    </button>
+                  </div>
+
+                  <div class="col-1 text-center menu-box">
+                    <mat-menu #menu="matMenu">
+                      <button mat-menu-item (click)="cloneTracks(card.trackId)">
+                        <span>Clone</span>
+                      </button>
+                      <!-- <button mat-menu-item disabled>
+                        <span>Edit</span>
+                      </button>
+                      <button mat-menu-item>
+                        <span>Item 3</span>
+                      </button>
+                      <button mat-menu-item>
+                        <span>Item 4</span>
+                      </button> -->
+                    </mat-menu>
+                  </div>
+                </mat-panel-title>
+              </mat-expansion-panel-header>
+              <div class="row custom-body" *ngIf="card?.scenarioStatusSummery?.length > 0; else noTrackData">
+                <div class="text-center col-3" *ngFor="let scenarioStatus of card?.scenarioStatusSummery">
+                  <label class="scenarios-acc">{{scenarioStatus?.status}}</label>
+                  <label class="count">{{scenarioStatus?.noOfScenarios}}</label>
+                </div>
+                <!-- <div class="text-center col-3">
+                  <label class="scenarios-acc">In Progress</label>
+                  <label class="count">6</label>
+                </div>
+                <div class="text-center col-3">
+                  <label class="scenarios-acc">Invalidated</label>
+                  <label class="count">3</label>
+                </div>
+                <div class="text-center col-3">
+                  <label class="scenarios-acc">Completed</label>
+                  <label class="count">10</label>
+                </div> -->
+
+              </div>
+            </mat-expansion-panel>
+
+          </mat-accordion>
+        </div>
+      </mat-tab>
+      <mat-tab label="My Tracks" >
+        <div class="row headers m-0">
+          <div class="col-2" style="margin: auto;">Track Details</div>
+          <div class="col-3 scenarios-header" style="margin: auto; text-align:center;"># Scenarios</div>
+          <div class="col-2" style="margin: auto;">Status</div>
+          <div class="col-5" style="margin: auto;"></div>
+        </div>
+        <div *ngIf="list">
+          <mat-accordion class="list-accordian" *ngFor="let card of teamTracksData;">
+            <mat-expansion-panel>
+              <mat-expansion-panel-header>
+                <mat-panel-title>
+                  <div class="col-3">
+                    <div class="col-12 detail-header">{{card.trackName | titlecase }}</div>
+                    <div class="col-12 detail-descr">ID: {{card.trackId}} | {{card.lastUpdatedDate | date: 'dd/MM/yyyy hh:mm a'}}</div>
+                  </div>
+                  <div class="col-2 scenarios">
+                    <span>{{card.noOfScenarios}}</span>Scenarios
+                  </div>
+                  <div class="col-2 status-dot">
+                    <i class="fa fa-circle"
+                       [ngClass]="{'in-progress': card.trackStatus === 'IN PROGRESS', 'draft': card.trackStatus === 'DRAFT',
+                      'approved': card.trackStatus === 'APPROVED' || card.trackStatus === 'FINALIZED'
+                          || card.trackStatus === 'COMPLETED'}"></i>
+                    {{card.trackStatus | titlecase}}
+                  </div>
+
+                  <div class="col-2 p-0 list-track text-center" (click)="veiwTrack($event, card.trackId)">
+                    <a href="javascript:void(0)">View Track</a>
+                  </div>
+                  <div class="col-1 p-0 text-center" (click)="menuClick($event)">
+                    <button class="dot-button" mat-icon-button [matMenuTriggerFor]="menu" aria-label="Menu">
+                      <img src="./assets/images/more-vertical.svg" width="18px" height="18px">
+                    </button>
+                  </div>
+                  <div class="col-1 text-center menu-box">
+                    <mat-menu #menu="matMenu">
+                      <button mat-menu-item (click)="cloneTracks(card.trackId)">
+                        <span>Clone</span>
+                      </button>
+                      <!-- <button mat-menu-item disabled>
+                        <span>Edit</span>
+                      </button>
+                      <button mat-menu-item>
+                        <span>Item 3</span>
+                      </button>
+                      <button mat-menu-item>
+                        <span>Item 4</span>
+                      </button> -->
+                    </mat-menu>
+                  </div>
+                </mat-panel-title>
+              </mat-expansion-panel-header>
+              <div class="row custom-body" *ngIf="card?.scenarioStatusSummery?.length > 0; else noTrackData">
+                <div class="text-center col-3" *ngFor="let scenarioStatus of card?.scenarioStatusSummery">
+                  <label class="scenarios-acc">{{scenarioStatus?.status}}</label>
+                  <label class="count">{{scenarioStatus?.noOfScenarios}}</label>
+                </div>
+                <!-- <div class="text-center col-3">
+                  <label class="scenarios-acc">Draft</label>
+                  <label class="count">4</label>
+                </div>
+                <div class="text-center col-3">
+                  <label class="scenarios-acc">In Progress</label>
+                  <label class="count">6</label>
+                </div>
+                <div class="text-center col-3">
+                  <label class="scenarios-acc">Invalidated</label>
+                  <label class="count">3</label>
+                </div>
+                <div class="text-center col-3">
+                  <label class="scenarios-acc">Completed</label>
+                  <label class="count">10</label>
+                </div> -->
+              </div>
+            </mat-expansion-panel>
+
+          </mat-accordion>
+        </div>
+      </mat-tab>
+
+    </mat-tab-group>
+
+    <div class="col-6 offset-4 bottom-action">
+      <button type="button" class="col-3 offset-3 bottom-action-button create-track btn btn-primary" (click)="executeTracks($event)">Execute Track</button>
+      <button type="button" class="col-3 btn bottom-action-button btn-primary approve-track" routerLink="../track/create">New Track</button>
+    </div>
+  </div>
+  <div class="col-3 right-widget">
+    <app-track-summary [data]="summaryData"></app-track-summary>
+  </div>
+
+  <ng-template #noTrackData>
+    <div class="row noTrackData">No Tracks Data Available</div>
+  </ng-template>
+</div>

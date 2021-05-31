@@ -1,0 +1,143 @@
+.track-name {
+  font-family: Interstate-Bold;
+  font-size: 36px;
+  color: #333333;
+  text-align: left;
+  padding-left: 15px;
+
+  input {
+    border: none;
+    width: 250px;
+    background: unset;
+  }
+
+  input:focus {
+    outline: none;
+  }
+
+}
+
+
+
+.scenario-name {
+  font-family: Interstate-Regular;
+  font-size: 30px;
+  color: #333333;
+  text-align: left;
+  padding-left: 15px;
+
+  input {
+    border: none;
+    width: 250px;
+    background: unset;
+  }
+
+  input:focus {
+    outline: none;
+  }
+}
+
+.track-name-edit {
+  margin-left: 45px;
+  margin-top: 3px;
+  width: 18px;
+  cursor: pointer;
+}
+
+.track-name-err-msg {
+  padding-left: 30px;
+  padding-top: 15px;
+  color: red;
+  font-size: small;
+}
+
+.section1 {
+  background: #FFFFFF;
+  border-radius: 16px;
+
+  .title {
+    font-family: Interstate-Regular;
+    font-size: 24px;
+    color: #333333;
+  }
+
+  .text {
+    background: #D8D8D8;
+    border: 1px solid #979797;
+    height: 161px;
+    width: 100%;
+    font-family: Interstate-Regular;
+    font-size: 24px;
+    color: #333333;
+    letter-spacing: 0;
+  }
+
+  textarea:focus {
+    outline: none;
+  }
+}
+
+.section2 {
+  background: #FFFFFF;
+  border-radius: 16px;
+  margin-top: 15px !important;
+
+  .title {
+    font-family: Interstate-Regular;
+    font-size: 24px;
+    color: #333333;
+  }
+
+  .headers {
+    font-family: Interstate-Bold;
+    font-size: 14px;
+    color: #333333;
+    letter-spacing: 0;
+    line-height: 24px;
+    opacity: 0.9;
+    background: #F8F7F7;
+    height: 54px;
+
+    th {
+      // padding: unset;
+      vertical-align: middle;
+      min-width: 80px;
+    }
+  }
+
+  td {
+    font-family: Interstate-Regular;
+    font-size: 14px;
+    color: #333333;
+    letter-spacing: 0;
+    line-height: 24px;
+    padding: unset;
+    vertical-align: middle;
+    text-align: left;
+
+    input {
+      width: 80px;
+      background: unset;
+      border: none;
+      border-bottom: .5px solid #ccc;
+      margin: 10px;
+    }
+
+    input:focus {
+      outline: none;
+    }
+  }
+
+  tr {
+    height: 64px;
+
+    td {
+      padding-left: 10px;
+    }
+
+    th {
+      padding-left: 20px;
+    }
+  }
+
+}

@@ -1,0 +1,84 @@
+<div class="row">
+  <div class="track-name">
+    <input type="text" [(ngModel)]="createTrackService.trackName" readonly />
+  </div>
+  <!-- <img src="assets/images/edit.svg" (click)="editTrack = true" class="track-name-edit" alt="edit"> -->
+</div>
+<br>
+<div class="row m-0">
+  <div class="col section1">
+    <div class="row m-0" style="margin-top: 35px !important;">
+
+      <div class="col-5 sample-size">
+        <div class="row title">Sample Size</div>
+          <div *ngFor="let programDataSet of programDataSets | keyvalue">
+          <div class="row title-inside">{{programDataSet?.key}}</div>
+          <div *ngFor="let dataSet of programDataSets.get(programDataSet?.key)">
+            <div class="sampleValues">
+              <span class="sampleValue" [ngClass]="{'selected': dataSet.sampleSize == 5}">5%</span>
+              <span class="sampleValue" [ngClass]="{'selected': dataSet.sampleSize == 10}">10%</span>
+              <span class="sampleValue" [ngClass]="{'selected': dataSet.sampleSize == 15}">15%</span>
+              <span class="sampleValue" [ngClass]="{'selected': dataSet.sampleSize == 20}">20%</span>
+            </div>
+            <div class="row slider">
+              <mat-slider max="100" min="25" step="25" [(ngModel)]="dataSet.sampleSize">
+              </mat-slider>
+              <div class="sliderPoint"><span class="circle"></span><span class="circle"></span><span
+                  class="circle"></span><span class="circle"></span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+           <div class="col-2"></div>
+      <div class="col-5" style="margin-right:0px">
+        <div class="row title">Campaign Budget</div>
+        <div class="row budget">
+          <div class="minus" (click)="minus()">
+            <mat-icon style="margin-top: 2px;">minimize</mat-icon>
+          </div>
+          <div class="textField">
+            <div class="dollar col-auto">$</div>
+            <div class="col p-0"><input type="number" [(ngModel)]="createTrackService.campaignBudget" /> </div>
+          </div>
+          <div class="plus" (click)="add()">
+            <div style="margin-top: 12px;">+</div>
+          </div>
+        </div>
+        <div class="row m-0" style="color: red; padding-top: 10px;">{{errorMessages.get("campaignBudget")}}</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="row m-0">
+  <div class="col section2">
+    <div class="row m-0" style="margin-top: 35px !important;">
+      <div class="col">
+        <div class="row m-0 title">
+          <div>Override Cannibalization</div>
+          <div style="margin-left: 122px; padding-top: 3px;">
+            <mat-checkbox class="check" [checked]="all" (change)="setAll($event.checked)"></mat-checkbox>
+          </div>
+        </div>
+        <div class="row m-0" style="color: red;">{{errorMessages.get("cannibalizationRule")}}</div>
+        <div class="row m-0" style="color: red;">{{errorMessages.get("cannibalizationValue")}}</div>
+        <div class="row m-0 override" *ngFor="let rule of createTrackService.cannibalizationRules; let i=index">
+          <div class="checkbox">
+            <mat-checkbox class="check" (change)="updateAllComplete()" [(ngModel)]="rule.checked">
+              {{rule.cannibalizationRule}}</mat-checkbox>
+          </div>
+          <div class="percent">
+            <div class="textField">
+              <div class="col p-0">
+                <input [(ngModel)]="rule.cannibalizationValue" [ngClass]="{'checked': rule.checked}" type="number"
+                  value="0" />
+              </div>
+              <div class="symbol col-auto">%</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<app-progress [step]='2' (emitIsNextBtnClicked)="nextBtnClickedEvent()"></app-progress>

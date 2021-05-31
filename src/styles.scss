@@ -1,0 +1,88 @@
+/* You can add global styles to this file, and also import other style files */
+
+/* Importing Bootstrap SCSS file. */
+@import '~bootstrap/scss/bootstrap';
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+@font-face {
+    font-family: Interstate-Light;
+    src: url('/assets/fonts/InterstateL.ttf') format("truetype");
+  }
+  
+  @font-face {
+    font-family: Interstate-Regular;
+    src: url('/assets/fonts/InterstateR.ttf') format("truetype");
+  }
+  
+  @font-face {
+    font-family: InterstateExtraLight;
+    src: url('/assets/fonts/Interstate-ExtraLight.otf') format("truetype");
+  }
+  
+  @font-face {
+    font-family: Interstate-Bold;
+    src: url('/assets/fonts/IntBd.TTF') format("truetype");
+  }
+
+ .modal-close {
+	float: right;
+	position: relative;
+	&:hover {
+		cursor: pointer;
+	}
+}
+.mat-dialog-content {
+	p {
+	margin-bottom: 5px;
+	font-family: Interstate-Light;
+	font-size: 16px;
+	color: #333333;
+	letter-spacing: 0;
+	line-height: 24px;
+	padding-left: 6px;
+	}
+}
+
+.mat-tab-label {
+	&:focus {
+		color: #2e7bef !important;
+	}
+}
+.mat-tab-group.mat-primary {
+	.mat-ink-bar {
+		background-color: #2e7bef;
+		height: 3px;
+	}
+}
+.mat-tab-nav-bar.mat-primary {
+	.mat-ink-bar {
+		background-color: #2e7bef;
+		height: 3px;
+	}
+}
+
+.carousel-slide{
+    background-image: none !important;
+}
+.carousel-slide-overlay{
+    background-color: transparent !important;
+}
+.carousel{
+    max-height: 200px !important;
+}
+.carousel > button{
+    display: none !important;
+}
+.carousel-indicators{
+	left:35% !important;
+	
+}
+.carousel-indicators > button:disabled{
+	background-color: #2e7bef !important;
+}
+
+.carousel-indicators > button{
+	border: 1px solid #2e7bef !important;
+}

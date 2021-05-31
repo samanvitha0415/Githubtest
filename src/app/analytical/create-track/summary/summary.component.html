@@ -1,0 +1,110 @@
+<div class="row">
+  <div class="col-6">
+    <div class="row">
+      <div class="track-name col-auto" style="padding-right: 0px">
+        <input type="text" [(ngModel)]="createTrackService.trackName" *ngIf="!createTrackService.trackId" />
+        <span *ngIf="!!createTrackService.trackId">{{createTrackService.trackName}}</span>
+      </div>
+      <div class="col-auto p-0">
+        <img src="assets/images/edit.svg" class="track-name-edit" alt="edit" *ngIf="!createTrackService.trackId">
+      </div>
+    </div>
+    <br>
+    <div class="row" style="margin-top: 10px;">
+      <div class="scenario-name">
+        <input type="text" [(ngModel)]="createTrackService.scenarioName" *ngIf="!createTrackService.scenarioId"/>
+        <span *ngIf="!!createTrackService.scenarioId">{{createTrackService.scenarioName}}</span>
+      </div>
+      <img src="assets/images/edit.svg" class="track-name-edit" alt="edit"  *ngIf="!createTrackService.scenarioId">
+    </div>
+    <br>
+  </div>
+  <div class="col-6">
+    <button class="btn primary discard" (click)="discard()">Discard</button>
+  </div>
+</div>
+
+<div class="row m-0">
+  <div class="col section1">
+    <div class="row m-0" style="margin: 30px 10px !important;">
+      <div class="title">Optimizer Objective</div>
+    </div>
+    <div class="row m-0" style="margin: 0px 10px !important;">
+      <div class="text">{{createTrackService.optimizerObjective}}</div>
+    </div>
+    <br>
+  </div>
+</div>
+<div class="row m-0">
+  <div class="col section2">
+    <div class="row m-0" style="margin: 30px 10px !important;">
+      <div class="col">
+        <div class="row m-0">
+          <div class=" col p-0 title">
+            <div> Details</div>
+          </div>
+          <div class="col p-0">
+            <div class="button" *ngIf="!createTrackService.type">
+              <div style="margin-top: 7px;">
+                <mat-icon style="font-size: 12px;">edit</mat-icon> Edit
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row m-0" style="margin-top: 35px !important">
+          <div class="col-4 p-0">
+            <div class="row m-0">
+              <span class="detail-header">CAMPAIGN Name</span>
+            </div>
+            <div class="row m-0" style="margin-top: 25px !important">
+              <span class="detail-text">{{createTrackService.selectedCampaignName}}</span>
+            </div>
+          </div>
+          <div class="col-4 p-0">
+            <div class="row m-0">
+              <span class="detail-header">SCENARIO NAME</span>
+            </div>
+            <div class="row m-0" style="margin-top: 25px !important">
+              <span class="detail-text">{{createTrackService.scenarioName}}</span>
+            </div>
+          </div>
+          <div class="col-4 p-0">
+            <div class="row m-0">
+              <span class="detail-header">SAMPLE SIZE</span>
+            </div>
+            <div class="row m-0" style="margin-top: 25px !important">
+              <span *ngFor="let dataSet of createTrackService.$selectedDatasets$|async"
+                class="detail-text">{{dataSet.datasetName}} - {{dataSet.sampleSize}} %</span><br>
+            </div>
+          </div>
+        </div>
+        <div class="row m-0" style="margin-top: 35px !important">
+          <div class="col-4 p-0">
+            <div class="row m-0">
+              <span class="detail-header">OVERRIDE CANNIBALIZATION</span>
+            </div>
+            <div class="row m-0" style="margin-top: 25px !important">
+              <span class="detail-text">
+                <span *ngFor="let rules of createTrackService.cannibalizationRules">
+                  <span *ngIf="rules.checked">
+                    {{rules.cannibalizationRule}} <br>
+                  </span>
+                </span>
+              </span>
+            </div>
+          </div>
+          <div class="col-4 p-0">
+            <div class="row m-0">
+              <span class="detail-header">CAMPAIGN BUDGET</span>
+            </div>
+            <div class="row m-0" style="margin-top: 25px !important">
+              <span class="detail-text">{{createTrackService.campaignBudget}}</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <br>
+  </div>
+</div>
+<app-progress [step]='6'></app-progress>

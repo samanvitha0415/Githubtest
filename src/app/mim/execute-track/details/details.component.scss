@@ -1,0 +1,376 @@
+.track-name {
+    font-family: Interstate-Bold;
+    font-size: 36px;
+    color: #333333;
+    text-align: left;
+    padding-left: 15px;
+  }
+  
+  .track-name-edit {
+    margin-left: 45px;
+    margin-top: 3px;
+    width: 18px;
+    cursor: pointer;
+  }
+  
+  .section1 {
+      .left{
+          width:50%;
+          .row{
+            &.title-inside{
+              margin-left:4px;
+              font-weight: bold;
+            }
+          }
+      }
+    background: #FFFFFF;
+    border-radius: 16px;
+    padding-bottom: 50px;
+    // height: 195px;
+  
+    .budget {
+      margin-top: 30px !important;
+  
+      .minus {
+        border: 2px solid #E5E5E5;
+        border-radius: 8px;
+        font-family: Interstate-Regular;
+        font-size: 24px;
+        color: #9B9B9B;
+        width: 48px;
+        height: 48px;
+        text-align: center;
+        cursor: pointer;
+      }
+  
+      .textField {
+        background: #FFFFFF;
+        border: 1px solid #E5E5E5;
+        box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.10);
+        border-radius: 8px;
+        width: 253px;
+        height: 48px;
+        margin-left: 20px;
+        display: flex;
+  
+        .dollar {
+          font-family: Interstate-Regular;
+          font-size: 17.95px;
+          color: #9B9B9B;
+          padding: 13px;
+        }
+  
+        input {
+          font-family: Interstate-Bold;
+          font-size: 24px;
+          color: #333333;
+          width: 100%;
+          margin-top: 8px;
+          border: none;
+        }
+  
+        input:focus {
+          outline: none;
+        }
+  
+        input::-webkit-outer-spin-button,
+        input::-webkit-inner-spin-button {
+          -webkit-appearance: none;
+          margin: 0;
+        }
+      }
+  
+      .plus {
+        border: 2px solid #E5E5E5;
+        border-radius: 8px;
+        font-family: Interstate-Regular;
+        font-size: 24px;
+        color: #9B9B9B;
+        width: 48px;
+        height: 48px;
+        text-align: center;
+        margin-left: 20px;
+        cursor: pointer;
+      }
+    }
+  
+    
+
+    .title {
+        font-family: Interstate-Regular;
+        font-size: 24px;
+        color: #333333;
+        text-align: left;
+        margin-bottom: 25px !important;
+    
+        ::ng-deep .mat-checkbox-checked.mat-accent .mat-checkbox-ripple .mat-ripple-element {
+          opacity: 0.03 !important;
+          background-color: #056DAE !important;
+        }
+    
+        ::ng-deep .mat-checkbox-checked.mat-accent .mat-checkbox-background,
+        .mat-checkbox-indeterminate.mat-accent .mat-checkbox-background {
+          background-color: #056DAE;
+        }
+      }
+  
+    .sampleValues {
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      width: 238px;
+      margin-top: 30px;
+  
+      .sampleValue {
+        font-family: Interstate-Regular;
+        font-size: 18px;
+        color: #9B9B9B;
+        letter-spacing: 0;
+      }
+  
+      & .selected {
+        font-family: Interstate-Bold;
+        font-size: 24px;
+        color: #333333;
+      }
+    }
+  
+    .slider {
+      width: 238px;
+      position: relative;
+  
+      .circle {
+        display: inline-block;
+        width: 6px;
+        height: 6px;
+        border-radius: 50%;
+        background-color: #9B9B9B;
+      }
+  
+      .mat-slider-horizontal {
+        width: 100%;
+      }
+  
+      .sliderPoint {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        position: absolute;
+        padding: 8px;
+        top: 16px;
+      }
+  
+      ::ng-deep .mat-slider-thumb {
+        background: #FFFFFF;
+        box-shadow: 2px 2px 6px 0 rgb(0 0 0 / 34%);
+        border: none;
+      }
+  
+      ::ng-deep .mat-slider-horizontal .mat-slider-track-fill {
+        height: 4.5px;
+        opacity: 0.2;
+        background: #686565;
+        border-radius: 2.94px;
+      }
+  
+      ::ng-deep .mat-slider-horizontal .mat-slider-track-background {
+        height: 4.5px;
+        opacity: 0.2;
+        background: #686565;
+      }
+  
+      ::ng-deep .mat-slider-horizontal .mat-slider-wrapper {
+        height: 4.5px;
+        border-radius: 2.94px;
+      }
+  
+      ::ng-deep .mat-slider-horizontal .mat-slider-track-wrapper {
+        height: 4.5px;
+        border-radius: 2.94px;
+      }
+    }
+
+    .checkbox {
+        background: #FFFFFF;
+        border: 1px solid #E5E5E5;
+        box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.10);
+        border-radius: 3.37px;
+        width: 314px;
+        height: 48px;
+  
+        .check {
+          padding-top: 11px;
+          padding-left: 11px;
+        }
+  
+        ::ng-deep .mat-checkbox-checked.mat-accent .mat-checkbox-ripple .mat-ripple-element {
+          opacity: 0.03 !important;
+          background-color: #056DAE !important;
+        }
+  
+        ::ng-deep .mat-checkbox-checked.mat-accent .mat-checkbox-background,
+        .mat-checkbox-indeterminate.mat-accent .mat-checkbox-background {
+          background-color: #056DAE;
+        }
+  
+        ::ng-deep .mat-checkbox-label {
+          font-family: Interstate-Regular;
+          font-size: 17.95px;
+          color: #333333;
+        }
+  
+        ::ng-deep .mat-checkbox-checked .mat-checkbox-label {
+          font-family: Interstate-Bold;
+          font-size: 24px;
+          color: #333333;
+        }
+      }
+
+      .override {
+        margin-bottom: 15px !important;
+    
+        .percent {
+          .textField {
+            margin-left: 10px;
+            display: flex;
+    
+            .symbol {
+              font-family: Interstate-Regular;
+              font-size: 17.95px;
+              color: #9B9B9B;
+              padding: 13px;
+            }
+    
+            input {
+              font-family: Interstate-Regular;
+              font-size: 17.95px;
+              color: #9B9B9B;
+              width: 100%;
+              margin-top: 12px;
+              border: none;
+            }
+    
+            & .checked {
+              font-family: Interstate-Bold;
+              font-size: 24px;
+              color: #333333;
+              margin-top: 8px;
+            }
+    
+            input:focus {
+              outline: none;
+            }
+    
+            input::-webkit-outer-spin-button,
+            input::-webkit-inner-spin-button {
+              -webkit-appearance: none;
+              margin: 0;
+            }
+          }
+        }
+    
+        .checkbox {
+          background: #FFFFFF;
+          border: 1px solid #E5E5E5;
+          box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.10);
+          border-radius: 3.37px;
+          width: 314px;
+          height: 48px;
+          font-family: Interstate-Regular;
+          font-size: 17.95px;
+          color: #333333;
+          padding:11px;
+    
+          .check {
+            padding-top: 11px;
+            padding-left: 11px;
+          }
+    
+          ::ng-deep .mat-checkbox-checked.mat-accent .mat-checkbox-ripple .mat-ripple-element {
+            opacity: 0.03 !important;
+            background-color: #056DAE !important;
+          }
+    
+          ::ng-deep .mat-checkbox-checked.mat-accent .mat-checkbox-background,
+          .mat-checkbox-indeterminate.mat-accent .mat-checkbox-background {
+            background-color: #056DAE;
+          }
+    
+          ::ng-deep .mat-checkbox-label {
+            font-family: Interstate-Regular;
+            font-size: 17.95px;
+            color: #333333;
+          }
+    
+          ::ng-deep .mat-checkbox-checked .mat-checkbox-label {
+            font-family: Interstate-Bold;
+            font-size: 24px;
+            color: #333333;
+          }
+        }
+    
+        .percent {
+          background: #FFFFFF;
+          border: 1px solid #E5E5E5;
+          box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.10);
+          border-radius: 3.37px;
+          width: 100px;
+          height: 48px;
+        }
+      }
+  
+  }
+  
+  .section2 {
+    background: #FFFFFF;
+    border-radius: 16px;
+    height: 292px;
+    margin-top: 15px;
+
+    table{
+        margin-top:30px;
+    }
+
+    .headers {
+        font-family: Interstate-Bold;
+        font-size: 14px;
+        color: #333333;
+        letter-spacing: 0;
+        line-height: 24px;
+        opacity: 0.9;
+        background: #F8F7F7;
+        height: 54px;
+    
+        th {
+          padding: unset;
+          vertical-align: middle;
+          min-width: 80px;
+        }
+      }
+    
+      td {
+        font-family: Interstate-Regular;
+        font-size: 14px;
+        color: #333333;
+        letter-spacing: 0;
+        line-height: 24px;
+        padding: unset;
+        vertical-align: middle;
+        min-width: 80px;
+        text-align: left;
+      }
+    
+      tr {
+        height: 64px;
+    
+        td:nth-child(1) {
+          padding-left: 30px;
+        }
+    
+        th:nth-child(1) {
+          padding-left: 30px;
+        }
+      }
+    
+  }
+  

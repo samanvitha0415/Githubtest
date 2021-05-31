@@ -1,0 +1,95 @@
+.leftNav {
+  width: 113px;
+  position: absolute;
+  height: 100%;
+  background: #fff;
+  z-index: 10;
+}
+
+.leftNav.showLable {
+  width: 270px;
+  box-shadow: 2px 0px 3px 1px rgba(170, 170, 170, 0.5);
+}
+
+.citi-logo-container {
+  display: flex;
+  justify-content: flex-start;
+  margin-top: 40px;
+  margin-bottom: 60px;
+  margin-left: 27px;
+}
+
+.citi-logo-container .bar {
+  display: inline-block;
+  height: 38px;
+  margin-left: 8px;
+  border-right: 1px solid rgba(0, 0, 0, 0.22);
+  margin-bottom: -15px;
+}
+
+.citi-logo-image {
+  width: 53px;
+  height: 30px;
+}
+
+.item {
+  margin-top: 17px;
+  margin-bottom: 20px;
+  display: flex;
+  justify-content: flex-start;
+  cursor: pointer;
+  outline: 0;
+}
+
+.item img {
+  max-width: 37px;
+  margin-left: 38px;
+}
+
+.showLable .item .caption {
+  display: flex;
+}
+
+
+.item-container {
+  display: flex;
+  flex-direction: column;
+
+  .caption {
+    display: none;
+    margin-right: 20px;
+    margin-left: 14px;
+    font-family: Interstate-Regular;
+    font-size: 18px;
+    color: #919191;
+    letter-spacing: 0;
+    padding-top: 4px;
+  }
+
+  .active {
+
+    .caption {
+      color: #3A4E8A;
+    }
+
+    .marker {
+      background: #056DAE;
+      border-radius: 0 9px 9px 0;
+      width: 4px;
+      height: 32px;
+    }
+  }
+}
+
+img {
+  max-height: 30px;
+  max-width: 30px;
+}
+
+i {
+  font-size: 30px;
+}
+
+.links {
+  margin: 10px 0;
+}

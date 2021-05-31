@@ -1,0 +1,26 @@
+[
+  {
+  "scenarioDetails":"Scenario 1","status":"In Progress"
+},
+{
+  "scenarioDetails":"Scenario 2","status":"Draft"
+},
+{
+  "scenarioDetails":"Scenario 3","status":"Draft"
+},
+{
+  "scenarioDetails":"Scenario 4","status":"Completed"
+},
+{
+  "scenarioDetails":"Scenario 5","status":"In Progress"
+},
+{
+  "scenarioDetails":"Scenario 6","status":"Completed"
+},
+{
+  "scenarioDetails":"Scenario 7","status":"Draft"
+    },
+{
+  "scenarioDetails":"Scenario 8","status":"In Progress"
+}
+]

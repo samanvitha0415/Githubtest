@@ -1,0 +1,99 @@
+<div class="row">
+  <div class="track-name">
+    <input type="text" [(ngModel)]="createTrackService.trackName" readonly />
+  </div>
+  <!-- <img src="assets/images/edit.svg" (click)="editTrack = true" class="track-name-edit" alt="edit"> -->
+</div>
+<br>
+<div class="row m-0">
+  <div class="col section1">
+    <div class="row m-0" style="margin-top: 30px !important;">
+      <div class="col">
+        <div class="row m-0">
+          <div class="title">Upload XML File </div>
+          <div class="upload">
+            <input [value]="xmlFileName" (click)="uploader.click()" type="text" id="file1">
+            <input hidden type="file" accept="text/xml" #uploader (change)="uploadXML($event)" />
+          </div>
+          <div class="button" (click)="editXML()">
+            <div style="margin-top: 10px;">+ Upload</div>
+          </div>
+        </div>
+        <div class="row m-0" style="color: red;">
+          {{errorMessages.get("xmlFile")}}
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="row m-0" *ngIf="showXMLEditor">
+  <div class="col section2">
+    <div class="row m-0" style="margin-top: 30px !important;">
+      <div class="col">
+        <div class="row m-0">
+          <div class=" col p-0 title">
+            <div>
+              <mat-icon style="transform: rotate(90deg)">attachment</mat-icon>
+            </div>
+            <div> {{xmlFileName}}</div>
+          </div>
+          <div class="col p-0">
+            <div class="button" (click)="edit()">
+              <div style="margin-top: 7px;">
+                <mat-icon style="font-size: 12px;">edit</mat-icon> Edit
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row m-0" style="margin-top: 10px !important">
+          <div class="col-4" style="padding-left: 7px"  *ngFor="let key of textFieldKeys">
+            <div class="row m-0">
+              <div class="col-9 p-0">
+                <div class="row label m-0">
+                    {{key}}
+                </div>
+                <div class="row m-0">
+                  <input type="text" disabled class="textField" [(ngModel)]="data[rootKey][key]._text" />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <br>
+        <div class="row m-0" style="margin-top: 20px !important">
+          <div class="col-12 p-0">
+            <mat-tab-group>
+              <mat-tab label="{{key}}" *ngFor="let key of tabKeys">
+                <br><br>
+                <table class="table table-hover rounded" style="border: 1px solid #dee2e6;">
+                  <thead>
+                    <tr>
+                      <th *ngFor="let tableHeader of getTableHeaders(key)">{{tableHeader}}</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr *ngFor="let val of getTableValues(key)">
+                      <td *ngFor="let valKey of getTableHeaders(key)">
+                        <span *ngIf="val[valKey] && val[valKey]._text">
+                          <input disabled type="text" *ngIf="val[valKey]._text.length <= 12" class="form-control-plaintext"
+                            [(ngModel)]="val[valKey]._text">
+                          <textarea disabled style="height: 80px" *ngIf="val[valKey]._text.length > 12" type="text"
+                            class="form-control-plaintext" [(ngModel)]="val[valKey]._text"></textarea>
+                        </span>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </mat-tab>
+            </mat-tab-group>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="row m-0" style="height: 500px;" *ngIf="!showXMLEditor">
+</div>
+<app-progress [step]='4' (emitIsNextBtnClicked)="nextBtnClickedEvent()"></app-progress>

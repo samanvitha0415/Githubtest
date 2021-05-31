@@ -1,0 +1,88 @@
+<div class="row">
+    <div class="col-6" style="margin: auto;">
+        <span class="title">Execute Track</span>
+    </div>
+    <div class="col-6 pull-right backlist">
+       
+                </div>
+</div>
+<div class="row section1">
+    <div class="col-12 inside-section">
+        <div class="row header" style="margin: 0 auto;">
+            <div class="col-8 details-header">{{ trackName }}</div>
+            <div class="col-2 notes">
+                <a  (click)="showTrack($event)"><img src="./assets/images/notes.svg">Notes </a>
+            </div>
+            <div class="col-2 clone">
+                
+            </div>
+        </div>
+            <div class="col header">
+            <div class="col-12 detail-descr">ID: {{ trackId }} | {{ lastUpdatedDate }}</div>
+        </div>
+
+        
+    
+        <ul class="list-group list-group-flush">
+            <li>
+                <div class="content d-flex justify-content-around">
+                    <div class="col-3 main-header">Scenario Details</div>
+                    <div class="col-3"></div>
+                    <div class="col-3 text-right">
+                        <i class="fa fa-search"> </i>
+                        <input class="search-input" type="text" placeholder="Search">
+                    </div>
+                    <div class="col-3 sorting">
+                        <label for="sort">Filter by:</label>
+                        <select id="sort" name="carlist" form="carform" (change)=filterBy($event)>
+                            <option value="latest">All</option>
+                            <option value="old">Draft</option>
+                            <option value="old">Inprogress</option>
+                        </select>
+                    </div>
+                </div>
+            </li>
+
+
+            <li *ngFor="let scenario of allScenarios.scenarioList" class="list-group-item">
+                <!--  -->
+            <ng-container *ngIf="scenario.approvalFlag != 'N'">  
+                <div class="content d-flex justify-content-around">
+                    <div class="col-3 main-header">{{ scenario.scenarioName }}</div>
+                    <div class="col-3">
+                        <div class="scenarios"><i aria-hidden="true" class="fa fa-circle i-approved"></i>
+                            <span class="status-label">{{ scenario.scenarioStatus }}</span></div>
+                    </div>
+                    <div class="col-3 text-right">
+                        <div class="col">View Scenario</div>
+                    </div>
+                    <div class="col-3 sorting-1  text-right">
+                        <div class="col">
+                            {{ scenario.priorityOrder }}
+                        </div>
+
+                    </div>
+                    <div class="col-3 sorting-1  text-right radio">
+                        <!-- <div class="col">
+                            <mat-checkbox class="check" (change)="selectedScenario($event, scenario.scenarioId)"></mat-checkbox>
+                        </div> -->
+
+
+                        <div class="col-1 p-0 text-center" (click)="selectedScenario($event , scenario.scenarioId, scenario)" >
+                            <mat-radio-button class="smallRadio" style="margin-top: 8px;" [value]="i"></mat-radio-button>
+                          </div> 
+
+
+
+                    </div>
+                </div>
+
+                <!--  -->
+            </ng-container>
+            </li>
+           </ul>
+    </div>
+</div>
+
+<app-progress-nav [step]='3'></app-progress-nav>
+

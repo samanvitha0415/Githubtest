@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="26px" height="26px" viewBox="0 0 26 26" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>01-direction/036-more-vertical</title>
+    <defs>
+        <path d="M21,10 C22.6568542,10 24,11.3431458 24,13 C24,14.6568542 22.6568542,16 21,16 C19.3431458,16 18,14.6568542 18,13 C18,11.3431458 19.3431458,10 21,10 Z M13,10 C14.6568542,10 16,11.3431458 16,13 C16,14.6568542 14.6568542,16 13,16 C11.3431458,16 10,14.6568542 10,13 C10,11.3431458 11.3431458,10 13,10 Z M5,10 C6.65685425,10 8,11.3431458 8,13 C8,14.6568542 6.65685425,16 5,16 C3.34314575,16 2,14.6568542 2,13 C2,11.3431458 3.34314575,10 5,10 Z" id="path-1"></path>
+    </defs>
+    <g id="01-direction/036-more-vertical" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <mask id="mask-2" fill="white">
+            <use xlink:href="#path-1"></use>
+        </mask>
+        <use id="Mask" fill="#056DAE" transform="translate(13.000000, 13.000000) rotate(90.000000) translate(-13.000000, -13.000000) " xlink:href="#path-1"></use>
+        <g id="Group" mask="url(#mask-2)" fill="#056DAE">
+            <g id="#056DAE">
+                <rect x="0" y="0" width="30" height="30"></rect>
+            </g>
+        </g>
+    </g>
+</svg>

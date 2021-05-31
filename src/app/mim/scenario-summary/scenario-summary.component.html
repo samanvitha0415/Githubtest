@@ -1,0 +1,53 @@
+<div class="right-widget">
+  <div class="row" style="float: right; margin-right: 1px;">
+      <button mat-icon-button aria-label="close dialog" mat-dialog-close>
+          <img style="width: 16px; height: 16px;" src="./assets/images/close.png" (click)="closeViewSummary()">
+      </button>
+  </div>
+  <div class="row">
+      <div class="col-12 scenarioTitle">Scenario Summary</div>
+      <p class="summaryText">{{selectedTrackScenario?.optimizerObjective}}</p>
+  </div>
+  <div>
+      <label class="row scenarioDetails">Details</label>
+      <div class="row summaryDetail">
+          <div class="col">
+              <label>Campaign Id</label>
+              <p>{{trackData?.campaignName}}</p>
+          </div>
+      </div>
+      <div class="row summaryDetail">
+          <div class="col">
+              <label>Scenario Name</label>
+              <p>{{selectedTrackScenario?.scenarioName}}</p>
+          </div>
+      </div>
+      <div class="row summaryDetail">
+          <!-- <div class="col">
+              <label>Sample Size</label>
+              <p>{{campaignDataSetSampleSize}}</p>
+          </div> -->
+          <div class="col">
+            <label>Dataset & Sample Size</label>
+            <div *ngFor="let dataSet of campaignDataSetSampleSize">
+                <p>{{dataSet?.datasetName}}: {{dataSet?.sampleSize}}</p>
+            </div>
+            
+        </div>
+      </div>
+      <div class="row summaryDetail">
+          <div class="col">
+              <label>Override Cannibalization</label>
+              <div *ngFor="let cannib of trackData?.campaignCannibalization">
+                <p>{{cannib?.cannibalizationRule}}</p>
+              </div>
+          </div>
+      </div>
+      <div class="row summaryDetail">
+          <div class="col">
+              <label>Campaign Budget</label>
+              <p>{{trackData?.campaignBudget | currency}}</p>
+          </div>
+      </div>
+  </div>
+</div>

@@ -1,0 +1,85 @@
+[
+    {
+        "campaignId": 156,
+        "lastUpdatedDate": "04/12/21 01:45 PM",
+        "campaignName": "A CMP-1 Flex Loan",
+        "campaignDescription": "Some desc here",
+        "campaignBudget": 485.05,
+        "cannibalizationRules": [
+            "Flex vs. Balcon",
+            "Balcon vs. Flex"
+        ],
+        "programs": [
+            {
+                "programName": "Flex",
+                "datasets": [
+                    {
+                        "datasetName": "SAMP_30_12_2004_1",
+                        "sampleSize": 30
+                    },
+                    {
+                        "datasetName": "SAMP_30_12_2004_2",
+                        "sampleSize": 50
+                    }
+                ]
+            },
+            {
+                "programName": "Balcon",
+                "datasets": [
+                    {
+                        "datasetName": "PROD_30_12_2004_3",
+                        "sampleSize": 20
+                    }
+                ]
+            },
+            {
+                "programName": "SalesGrowth",
+                "datasets": [
+                    {
+                        "datasetName": "PROD_30_12_2004_4",
+                        "sampleSize": 70
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "campaignId": 157,
+        "lastUpdatedDate": "04/19/21 04:56 PM",
+        "campaignName": "A CMP-2 Flex Loan",
+        "campaignDescription": "Some desc here",
+        "campaignBudget": 345.05,
+        "cannibalizationRules": [
+            "SalesGrowth vs. Flex",
+            "Balcon vs. SalesGrowth"
+        ],
+        "programs": [
+            {
+                "programName": "Flex",
+                "datasets": [
+                    {
+                        "datasetName": "SAMP_20_12_2004_5",
+                        "sampleSize": 40
+                    }
+                ]
+            },
+            {
+                "programName": "Balcon",
+                "datasets": [
+                    {
+                        "datasetName": "PROD_12_12_2004_6",
+                        "sampleSize": 10
+                    },
+                    {
+                        "datasetName": "SAMP_14_12_2004_7",
+                        "sampleSize": 45
+                    },
+                    {
+                        "datasetName": "PROD_75_12_2004_7",
+                        "sampleSize": 100
+                    }
+                ]
+            }
+        ]
+    }
+]
